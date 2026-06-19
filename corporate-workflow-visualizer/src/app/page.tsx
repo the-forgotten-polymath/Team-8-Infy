@@ -11,10 +11,10 @@ export default function EntryPage() {
 
       <div className="z-10 text-center max-w-4xl px-6">
         <h1 className="text-6xl md:text-8xl font-playfair mb-6 tracking-tight text-[#1A1A1A]">
-          Hutch <span className="text-[#C9540A] italic">Ecosystem</span>
+          Team-8 <span className="text-[#C9540A] italic">Infy</span>
         </h1>
         <p className="text-xl md:text-2xl font-sans mb-12 text-[#1A1A1A]/70 font-light max-w-2xl mx-auto">
-          Explore the Master Interoperability Layer. Navigate through our comprehensive user stories or visualize the interactive Digital Twin Architecture.
+          Retail Store Management System
         </p>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
@@ -31,6 +31,13 @@ export default function EntryPage() {
             className="group relative px-8 py-4 bg-transparent border border-[#1A1A1A]/20 text-[#1A1A1A] overflow-hidden rounded-sm transition-all hover:border-[#C9540A] hover:text-[#C9540A] hover:scale-105 active:scale-95 flex items-center justify-center w-64 bg-white/50 backdrop-blur-sm"
           >
             <span className="relative font-medium tracking-wide uppercase text-sm">User Stories Matrix</span>
+          </Link>
+
+          <Link 
+            href="/flow-explanation"
+            className="group relative px-8 py-4 bg-transparent border border-[#1A1A1A]/20 text-[#1A1A1A] overflow-hidden rounded-sm transition-all hover:border-[#C9540A] hover:text-[#C9540A] hover:scale-105 active:scale-95 flex items-center justify-center w-64 bg-white/50 backdrop-blur-sm"
+          >
+            <span className="relative font-medium tracking-wide uppercase text-sm">Flow Explanation</span>
           </Link>
         </div>
       </div>

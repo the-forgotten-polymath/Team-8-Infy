@@ -33,6 +33,34 @@ function getBusinessValue(moscow) {
 
 let counter = 1;
 
+const mapInterdependencyToSections = (text, currentSection) => {
+  if (!text || text.trim() === '-' || text.trim().toLowerCase() === 'none' || text.trim() === '') return text;
+  
+  const mapping = [
+    { section: 'Inventory Intelligence OS', keywords: ['Inventory', 'Digital Twin', 'Passport', 'Stock', 'ASN', 'Receiving'] },
+    { section: 'After-Sales Service', keywords: ['AST', 'Service', 'Repair', 'Loaner'] },
+    { section: 'Boutique Admin', keywords: ['Manager', 'Dashboard', 'Schedule', 'VIP Queue', 'Heatmap'] },
+    { section: 'Corporate Admin', keywords: ['Corporate', 'Global', 'Logistics SLA', 'Compliance'] },
+    { section: 'Sales Associate', keywords: ['Client', 'Profile', 'Sales', 'CRM', 'Checkout'] }
+  ];
+
+  let deps = new Set();
+  const lowerText = text.toLowerCase();
+  
+  mapping.forEach(m => {
+    if (m.section !== currentSection) {
+      if (m.keywords.some(k => lowerText.includes(k.toLowerCase()))) {
+        deps.add(m.section);
+      }
+    }
+  });
+
+  if (deps.size > 0) {
+    return `${text} [Depends on: ${Array.from(deps).join(', ')}]`;
+  }
+  return text;
+};
+
 for (const prd of prds) {
   const content = fs.readFileSync(path.resolve(__dirname, prd.file), 'utf8');
   const lines = content.split('\n');
@@ -54,6 +82,8 @@ for (const prd of prds) {
         let story = match[2].trim();
         let priorityRaw = match[3].trim();
         
+        let generatedInterdependency = mapInterdependencyToSections(story, prd.section);
+        
         // Exclude headers
         if (id !== 'ID' && !id.includes('---')) {
           const moscow = getMoscow(priorityRaw);
@@ -64,7 +94,7 @@ for (const prd of prds) {
             moscow: moscow,
             risk: getRisk(moscow),
             businessValue: getBusinessValue(moscow),
-            interdependency: 'Core Platform',
+            interdependency: generatedInterdependency === story ? 'Core Platform' : generatedInterdependency.split('[Depends on: ')[1].replace(']', ''),
             priority: counter++
           });
         }

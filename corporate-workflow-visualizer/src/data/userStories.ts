@@ -21,7 +21,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 1
   },
   {
@@ -81,7 +81,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 7
   },
   {
@@ -101,7 +101,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 9
   },
   {
@@ -111,7 +111,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 10
   },
   {
@@ -181,7 +181,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 17
   },
   {
@@ -211,7 +211,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 20
   },
   {
@@ -221,7 +221,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 21
   },
   {
@@ -241,7 +241,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 23
   },
   {
@@ -251,7 +251,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 24
   },
   {
@@ -261,7 +261,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 25
   },
   {
@@ -281,7 +281,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 27
   },
   {
@@ -291,7 +291,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 28
   },
   {
@@ -301,7 +301,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 29
   },
   {
@@ -311,7 +311,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 30
   },
   {
@@ -361,7 +361,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 35
   },
   {
@@ -371,7 +371,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 36
   },
   {
@@ -411,7 +411,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 40
   },
   {
@@ -421,7 +421,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 41
   },
   {
@@ -441,7 +441,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 43
   },
   {
@@ -451,7 +451,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 44
   },
   {
@@ -461,7 +461,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 45
   },
   {
@@ -471,7 +471,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 46
   },
   {
@@ -481,7 +481,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Boutique Admin",
     "priority": 47
   },
   {
@@ -491,7 +491,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 48
   },
   {
@@ -501,7 +501,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Boutique Admin",
     "priority": 49
   },
   {
@@ -511,7 +511,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Corporate Admin",
     "priority": 50
   },
   {
@@ -521,7 +521,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 51
   },
   {
@@ -531,7 +531,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 52
   },
   {
@@ -541,7 +541,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 53
   },
   {
@@ -551,7 +551,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 54
   },
   {
@@ -561,7 +561,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 55
   },
   {
@@ -571,7 +571,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 56
   },
   {
@@ -581,7 +581,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin, Corporate Admin",
     "priority": 57
   },
   {
@@ -591,7 +591,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 58
   },
   {
@@ -601,7 +601,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 59
   },
   {
@@ -611,7 +611,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 60
   },
   {
@@ -621,7 +621,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 61
   },
   {
@@ -631,7 +631,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 62
   },
   {
@@ -641,7 +641,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 63
   },
   {
@@ -651,7 +651,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 64
   },
   {
@@ -661,7 +661,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 65
   },
   {
@@ -671,7 +671,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 66
   },
   {
@@ -681,7 +681,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 67
   },
   {
@@ -701,7 +701,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 69
   },
   {
@@ -711,7 +711,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 70
   },
   {
@@ -731,7 +731,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, Sales Associate",
     "priority": 72
   },
   {
@@ -741,7 +741,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 73
   },
   {
@@ -751,7 +751,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 74
   },
   {
@@ -771,7 +771,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 76
   },
   {
@@ -781,7 +781,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 77
   },
   {
@@ -791,7 +791,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 78
   },
   {
@@ -891,7 +891,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 88
   },
   {
@@ -901,7 +901,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 89
   },
   {
@@ -911,7 +911,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 90
   },
   {
@@ -931,7 +931,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin, Corporate Admin",
     "priority": 92
   },
   {
@@ -941,7 +941,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 93
   },
   {
@@ -961,7 +961,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 95
   },
   {
@@ -981,7 +981,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 97
   },
   {
@@ -991,7 +991,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin, Corporate Admin",
     "priority": 98
   },
   {
@@ -1021,7 +1021,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 101
   },
   {
@@ -1031,7 +1031,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 102
   },
   {
@@ -1051,7 +1051,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 104
   },
   {
@@ -1061,7 +1061,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 105
   },
   {
@@ -1081,7 +1081,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 107
   },
   {
@@ -1091,7 +1091,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 108
   },
   {
@@ -1101,7 +1101,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 109
   },
   {
@@ -1111,7 +1111,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 110
   },
   {
@@ -1121,7 +1121,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 111
   },
   {
@@ -1131,7 +1131,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 112
   },
   {
@@ -1141,7 +1141,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Could have",
     "risk": "Low",
     "businessValue": "Medium",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 113
   },
   {
@@ -1151,7 +1151,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Could have",
     "risk": "Low",
     "businessValue": "Medium",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, Corporate Admin",
     "priority": 114
   },
   {
@@ -1181,7 +1181,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 117
   },
   {
@@ -1191,7 +1191,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 118
   },
   {
@@ -1211,7 +1211,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 120
   },
   {
@@ -1221,7 +1221,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 121
   },
   {
@@ -1321,7 +1321,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 131
   },
   {
@@ -1351,7 +1351,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 134
   },
   {
@@ -1361,7 +1361,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 135
   },
   {
@@ -1371,7 +1371,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 136
   },
   {
@@ -1391,7 +1391,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 138
   },
   {
@@ -1401,7 +1401,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 139
   },
   {
@@ -1411,7 +1411,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 140
   },
   {
@@ -1421,7 +1421,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 141
   },
   {
@@ -1441,7 +1441,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Could have",
     "risk": "Low",
     "businessValue": "Medium",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 143
   },
   {
@@ -1451,7 +1451,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 144
   },
   {
@@ -1471,7 +1471,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 146
   },
   {
@@ -1521,7 +1521,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 151
   },
   {
@@ -1531,7 +1531,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 152
   },
   {
@@ -1541,7 +1541,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, Sales Associate",
     "priority": 153
   },
   {
@@ -1551,7 +1551,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 154
   },
   {
@@ -1561,7 +1561,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 155
   },
   {
@@ -1571,7 +1571,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 156
   },
   {
@@ -1591,7 +1591,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 158
   },
   {
@@ -1621,7 +1621,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 161
   },
   {
@@ -1631,7 +1631,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin, Sales Associate",
     "priority": 162
   },
   {
@@ -1641,7 +1641,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 163
   },
   {
@@ -1661,7 +1661,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 165
   },
   {
@@ -1691,7 +1691,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 168
   },
   {
@@ -1731,7 +1731,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 172
   },
   {
@@ -1791,7 +1791,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 178
   },
   {
@@ -1801,7 +1801,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 179
   },
   {
@@ -1811,7 +1811,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 180
   },
   {
@@ -1841,7 +1841,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, After-Sales Service",
     "priority": 183
   },
   {
@@ -1861,7 +1861,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 185
   },
   {
@@ -1871,7 +1871,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 186
   },
   {
@@ -1881,7 +1881,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 187
   },
   {
@@ -1901,7 +1901,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 189
   },
   {
@@ -1911,7 +1911,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, After-Sales Service, Sales Associate",
     "priority": 190
   },
   {
@@ -1921,7 +1921,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, After-Sales Service, Sales Associate",
     "priority": 191
   },
   {
@@ -1931,7 +1931,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 192
   },
   {
@@ -1941,7 +1941,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 193
   },
   {
@@ -1971,7 +1971,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, After-Sales Service",
     "priority": 196
   },
   {
@@ -1981,7 +1981,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 197
   },
   {
@@ -2011,7 +2011,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 200
   },
   {
@@ -2041,7 +2041,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 203
   },
   {
@@ -2051,7 +2051,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 204
   },
   {
@@ -2071,7 +2071,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 206
   },
   {
@@ -2081,7 +2081,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, Sales Associate",
     "priority": 207
   },
   {
@@ -2091,7 +2091,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 208
   },
   {
@@ -2121,7 +2121,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 211
   },
   {
@@ -2141,7 +2141,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 213
   },
   {
@@ -2151,7 +2151,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 214
   },
   {
@@ -2161,7 +2161,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service, Sales Associate",
     "priority": 215
   },
   {
@@ -2171,7 +2171,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Sales Associate",
     "priority": 216
   },
   {
@@ -2191,7 +2191,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 218
   },
   {
@@ -2231,7 +2231,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 222
   },
   {
@@ -2261,7 +2261,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 225
   },
   {
@@ -2271,7 +2271,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, Sales Associate",
     "priority": 226
   },
   {
@@ -2281,7 +2281,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 227
   },
   {
@@ -2291,7 +2291,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 228
   },
   {
@@ -2321,7 +2321,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 231
   },
   {
@@ -2341,7 +2341,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "After-Sales Service",
     "priority": 233
   },
   {
@@ -2351,7 +2351,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 234
   },
   {
@@ -2371,7 +2371,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 236
   },
   {
@@ -2381,7 +2381,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 237
   },
   {
@@ -2391,7 +2391,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 238
   },
   {
@@ -2401,7 +2401,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 239
   },
   {
@@ -2481,7 +2481,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 247
   },
   {
@@ -2491,7 +2491,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 248
   },
   {
@@ -2511,7 +2511,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 250
   },
   {
@@ -2541,7 +2541,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 253
   },
   {
@@ -2561,7 +2561,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 255
   },
   {
@@ -2601,7 +2601,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 259
   },
   {
@@ -2611,7 +2611,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Could have",
     "risk": "Low",
     "businessValue": "Medium",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 260
   },
   {
@@ -2641,7 +2641,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 263
   },
   {
@@ -2691,7 +2691,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 268
   },
   {
@@ -2701,7 +2701,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 269
   },
   {
@@ -2711,7 +2711,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 270
   },
   {
@@ -2741,7 +2741,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 273
   },
   {
@@ -2771,7 +2771,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS",
     "priority": 276
   },
   {
@@ -2781,7 +2781,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 277
   },
   {
@@ -2801,7 +2801,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 279
   },
   {
@@ -2831,7 +2831,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Inventory Intelligence OS, After-Sales Service",
     "priority": 282
   },
   {
@@ -2851,7 +2851,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Must have",
     "risk": "High",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 284
   },
   {
@@ -2861,7 +2861,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 285
   },
   {
@@ -2871,7 +2871,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Corporate Admin",
     "priority": 286
   },
   {
@@ -2881,7 +2881,7 @@ export const userStoriesData: UserStory[] = [
     "moscow": "Should have",
     "risk": "Medium",
     "businessValue": "High",
-    "interdependency": "Core Platform",
+    "interdependency": "Boutique Admin",
     "priority": 287
   },
   {
