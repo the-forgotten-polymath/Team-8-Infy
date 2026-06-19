@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSMS Inventory Workflow - Interactive Deep Dive</title>
+    <!-- Include D3.js from CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --node-bg: #1e293b;
+            --node-border: #38bdf8;
+            --link-color: #475569;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* D3 will handle panning/zooming */
+        }
+
+        #header {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 5px 0;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #94a3b8;
+            margin: 0;
+        }
+
+        #graph-container {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .node circle {
+            fill: var(--node-bg);
+            stroke: var(--node-border);
+            stroke-width: 2.5px;
+            cursor: pointer;
+            transition: fill 0.3s ease;
+        }
+
+        .node circle:hover {
+            fill: #0ea5e9;
+        }
+
+        .node text {
+            font-family: var(--font-family);
+            font-size: 13px;
+            fill: var(--text-color);
+            pointer-events: none;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        .link {
+            fill: none;
+            stroke: var(--link-color);
+            stroke-width: 1.5px;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            text-align: left;
+            padding: 10px 14px;
+            font: 13px var(--font-family);
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid #334155;
+            color: #f8fafc;
+            border-radius: 8px;
+            pointer-events: none;
+            opacity: 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 20;
+            max-width: 300px;
+            line-height: 1.4;
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background: #1e293b;
+            color: #f8fafc;
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background: #334155;
+            border-color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <h1>Inventory Intelligence OS Workflow</h1>
+        <p>Interactive Architecture Map (Click nodes to expand/collapse)</p>
+    </div>
+
+    <div class="controls">
+        <button id="btn-reset">Reset View</button>
+        <button id="btn-expand">Expand All</button>
+        <button id="btn-collapse">Collapse All</button>
+    </div>
+
+    <div id="graph-container"></div>
+    <div id="tooltip" class="tooltip"></div>
+
+    <script>
+        // --- 1. Define the Hierarchical Workflow Data (from PRD_Inventory.md) ---
+        const treeData = {
+            name: "Inventory Intelligence OS",
+            desc: "The central core connecting all inventory operations.",
+            children: [
+                {
+                    name: "I1: Vision & RFID Capture",
+                    desc: "AI-powered inventory capture using device camera & RFID.",
+                    children: [
+                        { name: "Scan Execution", desc: "User scans multiple barcodes simultaneously or waves device for RFID." },
+                        { name: "Vision Framework Processing", desc: "VNDetectBarcodesRequest extracts payload & bounding boxes instantly." },
+                        { name: "Validation Engine", desc: "Reconciles scanned physical items against expected system items." },
+                        { name: "Exception Flagging", desc: "Highlights missing, unexpected, wrong-location, or duplicate items." },
+                        { name: "Digital Twin Update", desc: "Generates 'cycleCountVerified' event on the shared Product Digital Twin." }
+                    ]
+                },
+                {
+                    name: "I2: Smart ASN & Transfers",
+                    desc: "Automated inbound/outbound logistics matching.",
+                    children: [
+                        {
+                            name: "Inbound Receiving",
+                            desc: "Warehouse or Vendor to Store.",
+                            children: [
+                                { name: "Shipment Arrives", desc: "Boxes physically arrive at boutique." },
+                                { name: "Auto-Match ASN", desc: "System correlates scans against Advanced Shipping Notice." },
+                                { name: "Visual Receiving", desc: "User captures photos of received conditions or damages." },
+                                { name: "Initialize Stock", desc: "Items moved to 'inStock' status." }
+                            ]
+                        },
+                        {
+                            name: "Outbound Transfers",
+                            desc: "Store to Store or Return to Vendor (RTV).",
+                            children: [
+                                { name: "Initiate Transfer", desc: "Select items, destination, and expected date." },
+                                { name: "In-Transit Tracking", desc: "Items locked to 'inTransit' status." },
+                                { name: "Destination Signoff", desc: "Receiving store scans and confirms chain of custody." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "I3: Cycle Count & Audit",
+                    desc: "Scheduled physical verifications.",
+                    children: [
+                        { name: "Schedule Count", desc: "System generates periodic count mandates by zone." },
+                        { name: "Execute Count", desc: "Staff physically scans the assigned zone." },
+                        { name: "Variance Generation", desc: "System highlights discrepancies." },
+                        { name: "Manager Signoff", desc: "Boutique Manager reviews and approves/rejects variances." },
+                        { name: "Update Inventory Heatmap", desc: "Store map colors update (Green/Yellow/Red) based on accuracy." }
+                    ]
+                },
+                {
+                    name: "I4: Product Digital Twin Gen",
+                    desc: "The core shared entity creation flow.",
+                    children: [
+                        { name: "Intake High-Value Item", desc: "New luxury item hits the dock." },
+                        { name: "Capture Serial / RFID", desc: "Unique identifiers permanently bound to item." },
+                        { name: "Generate Passport", desc: "The foundational Product Digital Twin is minted." },
+                        { name: "Issue COA", desc: "Certificate of Authenticity generated and linked." }
+                    ]
+                },
+                {
+                    name: "I5: Service Logistics",
+                    desc: "Integration with After-Sales repair flow.",
+                    children: [
+                        { name: "Customer Drop-off", desc: "Item received for repair (reads existing Passport)." },
+                        { name: "Issue Loaner", desc: "Inventory module assigns a temporary loaner to customer." },
+                        { name: "Dispatch to Service", desc: "Track shipment to external repair center via SLA." },
+                        { name: "Receive Repaired Item", desc: "Item returns from service; QA verification." },
+                        { name: "Return Loaner", desc: "Customer picks up repaired item, loaner returns to stock." }
+                    ]
+                }
+            ]
+        };
+
+        // --- 2. Set up D3 Canvas and SVG ---
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const margin = { top: 20, right: 120, bottom: 20, left: 150 };
+
+        const svg = d3.select("#graph-container").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .call(d3.zoom().on("zoom", (event) => {
+                svgGroup.attr("transform", event.transform);
+            }))
+            .append("g")
+            .attr("transform", `translate(${margin.left},${height/2})`); // Center vertically
+
+        const svgGroup = d3.select("g"); // the zoomed group
+
+        const tooltip = d3.select("#tooltip");
+
+        let i = 0;
+        const duration = 500; // Animation duration
+        let root;
+
+        // Tree layout configuration
+        const treeMap = d3.tree().nodeSize([45, 250]); // Spacing [vertical, horizontal]
+
+        // --- 3. Initialize and format data ---
+        root = d3.hierarchy(treeData, d => d.children);
+        root.x0 = 0;
+        root.y0 = 0;
+
+        // Collapse all children of the root initially (High-Level View)
+        root.children.forEach(collapse);
+
+        update(root);
+
+        // --- 4. Core Update Function (Draws nodes and links) ---
+        function update(source) {
+            const treeData = treeMap(root);
+            const nodes = treeData.descendants();
+            const links = treeData.descendants().slice(1);
+
+            // Normalize for fixed-depth
+            nodes.forEach(d => { d.y = d.depth * 250; }); // Horizontal spacing per depth level
+
+            // --- Nodes ---
+            const node = svgGroup.selectAll('g.node')
+                .data(nodes, d => d.id || (d.id = ++i));
+
+            const nodeEnter = node.enter().append('g')
+                .attr('class', 'node')
+                .attr("transform", d => `translate(${source.y0},${source.x0})`)
+                .on('click', click)
+                .on('mouseover', showTooltip)
+                .on('mouseout', hideTooltip);
+
+            // Add Circle
+            nodeEnter.append('circle')
+                .attr('r', 1e-6)
+                .style("fill", d => d._children ? "#0ea5e9" : "#1e293b")
+                .style("stroke", d => d._children ? "#bae6fd" : "#38bdf8");
+
+            // Add Labels
+            nodeEnter.append('text')
+                .attr("dy", ".35em")
+                .attr("x", d => d.children || d._children ? -15 : 15)
+                .attr("text-anchor", d => d.children || d._children ? "end" : "start")
+                .text(d => d.data.name)
+                .style("fill-opacity", 1e-6);
+
+            const nodeUpdate = nodeEnter.merge(node);
+
+            // Transition nodes to new position
+            nodeUpdate.transition()
+                .duration(duration)
+                .attr("transform", d => `translate(${d.y},${d.x})`);
+
+            // Update Circle styling based on state (collapsed vs expanded)
+            nodeUpdate.select('circle')
+                .attr('r', 8)
+                .style("fill", d => d._children ? "#0ea5e9" : "#1e293b")
+                .style("stroke", d => d._children ? "#bae6fd" : "#38bdf8");
+
+            nodeUpdate.select('text')
+                .style("fill-opacity", 1);
+
+            // Remove exiting nodes
+            const nodeExit = node.exit().transition()
+                .duration(duration)
+                .attr("transform", d => `translate(${source.y},${source.x})`)
+                .remove();
+
+            nodeExit.select('circle').attr('r', 1e-6);
+            nodeExit.select('text').style('fill-opacity', 1e-6);
+
+            // --- Links ---
+            const link = svgGroup.selectAll('path.link')
+                .data(links, d => d.id);
+
+            const linkEnter = link.enter().insert('path', "g")
+                .attr("class", "link")
+                .attr('d', d => {
+                    const o = {x: source.x0, y: source.y0};
+                    return diagonal(o, o);
+                });
+
+            const linkUpdate = linkEnter.merge(link);
+
+            linkUpdate.transition()
+                .duration(duration)
+                .attr('d', d => diagonal(d, d.parent));
+
+            const linkExit = link.exit().transition()
+                .duration(duration)
+                .attr('d', d => {
+                    const o = {x: source.x, y: source.y};
+                    return diagonal(o, o);
+                })
+                .remove();
+
+            // Store old positions for transition
+            nodes.forEach(d => {
+                d.x0 = d.x;
+                d.y0 = d.y;
+            });
+        }
+
+        // Draws the curved line between parent and child
+        function diagonal(s, d) {
+            return `M ${s.y} ${s.x}
+                    C ${(s.y + d.y) / 2} ${s.x},
+                      ${(s.y + d.y) / 2} ${d.x},
+                      ${d.y} ${d.x}`;
+        }
+
+        // Toggle children on click
+        function click(event, d) {
+            if (d.children) {
+                d._children = d.children;
+                d.children = null;
+            } else {
+                d.children = d._children;
+                d._children = null;
+            }
+            update(d);
+            
+            // Adjust canvas centering if a node expands out of view
+            centerNode(d);
+        }
+
+        function collapse(d) {
+            if (d.children) {
+                d._children = d.children;
+                d._children.forEach(collapse);
+                d.children = null;
+            }
+        }
+
+        function expand(d) {
+            if (d._children) {
+                d.children = d._children;
+                d._children = null;
+            }
+            if (d.children) {
+                d.children.forEach(expand);
+            }
+        }
+
+        // --- Tooltip functionality ---
+        function showTooltip(event, d) {
+            if (!d.data.desc) return;
+            tooltip.transition().duration(200).style("opacity", 1);
+            tooltip.html(`<strong>${d.data.name}</strong><br/>${d.data.desc}`)
+                .style("left", (event.pageX + 15) + "px")
+                .style("top", (event.pageY - 15) + "px");
+        }
+
+        function hideTooltip() {
+            tooltip.transition().duration(200).style("opacity", 0);
+        }
+
+        // --- View Controls ---
+        const d3Zoom = d3.zoom().on("zoom", (event) => {
+            svgGroup.attr("transform", event.transform);
+        });
+
+        function centerNode(source) {
+            // Smoothly pan to the clicked node
+            const t = d3.zoomIdentity
+                .translate(width/2 - source.y0, height/2 - source.x0)
+                .scale(1);
+            d3.select("svg").transition().duration(duration).call(d3Zoom.transform, t);
+        }
+
+        document.getElementById('btn-reset').addEventListener('click', () => {
+            const t = d3.zoomIdentity.translate(margin.left, height/2).scale(1);
+            d3.select("svg").transition().duration(duration).call(d3Zoom.transform, t);
+        });
+
+        document.getElementById('btn-expand').addEventListener('click', () => {
+            expand(root);
+            update(root);
+        });
+
+        document.getElementById('btn-collapse').addEventListener('click', () => {
+            root.children.forEach(collapse);
+            update(root);
+            const t = d3.zoomIdentity.translate(margin.left, height/2).scale(1);
+            d3.select("svg").transition().duration(duration).call(d3Zoom.transform, t);
+        });
+
+    </script>
+</body>
+</html>
