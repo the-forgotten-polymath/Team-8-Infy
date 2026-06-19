@@ -72,6 +72,15 @@ export default function UserStoriesPage() {
     }
   };
 
+  const extractBenefit = (storyText: string) => {
+    const match = storyText.match(/(?:so that|in order to|so we can|so I can|so|and receive) (.*)/i);
+    if (match && match[1]) {
+      const text = match[1].trim();
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+    return 'Streamlines operations and improves workflow efficiency.';
+  };
+
   const handleSort = (field: SortField) => {
     if (sortField === field) {
       setSortDir(sortDir === 'asc' ? 'desc' : 'asc');
@@ -392,8 +401,17 @@ export default function UserStoriesPage() {
                     <td className="p-4 align-top text-sm">
                       <span className={getRiskColor(story.risk)}>{story.risk}</span>
                     </td>
-                    <td className="p-4 align-top text-sm">
-                      <span className={getValueColor(story.businessValue)}>{getBusinessValueText(story.businessValue)}</span>
+                    <td className="p-4 align-top text-sm min-w-[250px]">
+                      <div className="flex flex-col gap-3">
+                        <span className="text-[#1A1A1A]/90 leading-relaxed italic text-sm border-l-2 border-[#1A1A1A]/10 pl-3">
+                          "{extractBenefit(story.story)}"
+                        </span>
+                        <div>
+                          <span className={`${getValueColor(story.businessValue)} text-xs inline-block`}>
+                            {getBusinessValueText(story.businessValue)}
+                          </span>
+                        </div>
+                      </div>
                     </td>
                     <td className="p-4 align-top text-sm text-[#1A1A1A]/90">
                       {story.interdependency}
