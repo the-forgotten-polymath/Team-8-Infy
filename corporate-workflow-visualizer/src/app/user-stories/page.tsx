@@ -228,7 +228,7 @@ export default function UserStoriesPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-[#1A1A1A]/5">
-                {filteredAndSortedData.map((story) => (
+                {filteredAndSortedData.map((story, index) => (
                   <tr key={story.id} className="hover:bg-[#FAF8F5] transition-colors group">
                     <td className="p-4 align-top text-sm font-medium text-[#1A1A1A]">
                       {story.section}
@@ -255,7 +255,7 @@ export default function UserStoriesPage() {
                     </td>
                     <td className="p-4 align-top text-center">
                       <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#1A1A1A]/5 text-[#1A1A1A] font-bold text-sm group-hover:bg-[#C9540A] group-hover:text-white transition-colors">
-                        {story.priority}
+                        {index + 1}
                       </div>
                     </td>
                   </tr>
