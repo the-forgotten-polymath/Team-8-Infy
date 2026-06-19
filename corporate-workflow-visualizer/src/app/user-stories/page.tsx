@@ -111,7 +111,7 @@ export default function UserStoriesPage() {
         <div className="mb-8 flex flex-wrap gap-4">
           <button
             onClick={() => setActiveSection(null)}
-            className={`px-6 py-3 rounded-full text-sm font-semibold transition-all \${
+            className={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${
               activeSection === null 
               ? 'bg-[#1A1A1A] text-[#FAF8F5] shadow-lg scale-105' 
               : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/90 hover:border-[#C9540A] hover:text-[#C9540A]'
@@ -123,7 +123,7 @@ export default function UserStoriesPage() {
             <button
               key={section}
               onClick={() => setActiveSection(section)}
-              className={`px-6 py-3 rounded-full text-sm font-semibold transition-all \${
+              className={`px-6 py-3 rounded-full text-sm font-semibold transition-all ${
                 activeSection === section 
                 ? 'bg-[#C9540A] text-white shadow-lg scale-105' 
                 : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/90 hover:border-[#C9540A] hover:text-[#C9540A]'
@@ -240,7 +240,7 @@ export default function UserStoriesPage() {
                       {story.story}
                     </td>
                     <td className="p-4 align-top">
-                      <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-bold \${getMoscowColor(story.moscow)}`}>
+                      <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-bold ${getMoscowColor(story.moscow)}`}>
                         {story.moscow}
                       </span>
                     </td>

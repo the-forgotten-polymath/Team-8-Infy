@@ -102,7 +102,7 @@ export default function FlowExplanationPage() {
               <button
                 key={data.section}
                 onClick={() => setActiveSection(data)}
-                className={`text-left px-6 py-4 rounded-md text-sm font-bold tracking-wide transition-all \${
+                className={`text-left px-6 py-4 rounded-md text-sm font-bold tracking-wide transition-all ${
                   activeSection.section === data.section 
                   ? 'bg-[#C9540A] text-white shadow-md scale-[1.02]' 
                   : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/90 hover:border-[#C9540A] hover:text-[#C9540A]'
