@@ -11,6 +11,7 @@ export interface UserStory {
   businessValue: BusinessValue;
   interdependency: string;
   priority: number;
+  storyPoint: number;
 }
 
 export const userStoriesData: UserStory[] = [
@@ -22,7 +23,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 1
+    "priority": 1,
+    "storyPoint": 8
   },
   {
     "id": "I1-US02",
@@ -32,7 +34,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 2
+    "priority": 2,
+    "storyPoint": 8
   },
   {
     "id": "I1-US03",
@@ -42,7 +45,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 3
+    "priority": 3,
+    "storyPoint": 8
   },
   {
     "id": "I1-US04",
@@ -52,7 +56,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 4
+    "priority": 4,
+    "storyPoint": 8
   },
   {
     "id": "I1-US05",
@@ -62,7 +67,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 5
+    "priority": 5,
+    "storyPoint": 8
   },
   {
     "id": "I1-US06",
@@ -72,7 +78,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 6
+    "priority": 6,
+    "storyPoint": 8
   },
   {
     "id": "I1-US07",
@@ -82,7 +89,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 7
+    "priority": 7,
+    "storyPoint": 3
   },
   {
     "id": "I1-US08",
@@ -92,7 +100,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 8
+    "priority": 8,
+    "storyPoint": 3
   },
   {
     "id": "I1-US09",
@@ -102,7 +111,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 9
+    "priority": 9,
+    "storyPoint": 8
   },
   {
     "id": "I1-US10",
@@ -112,7 +122,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 10
+    "priority": 10,
+    "storyPoint": 3
   },
   {
     "id": "I2-US01",
@@ -122,7 +133,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 11
+    "priority": 11,
+    "storyPoint": 8
   },
   {
     "id": "I2-US02",
@@ -132,7 +144,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 12
+    "priority": 12,
+    "storyPoint": 8
   },
   {
     "id": "I2-US03",
@@ -142,7 +155,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 13
+    "priority": 13,
+    "storyPoint": 8
   },
   {
     "id": "I2-US04",
@@ -152,7 +166,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 14
+    "priority": 14,
+    "storyPoint": 8
   },
   {
     "id": "I2-US05",
@@ -162,7 +177,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 15
+    "priority": 15,
+    "storyPoint": 8
   },
   {
     "id": "I2-US06",
@@ -172,7 +188,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 16
+    "priority": 16,
+    "storyPoint": 3
   },
   {
     "id": "I2-US07",
@@ -182,7 +199,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 17
+    "priority": 17,
+    "storyPoint": 8
   },
   {
     "id": "I2-US08",
@@ -192,7 +210,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 18
+    "priority": 18,
+    "storyPoint": 8
   },
   {
     "id": "I2-US09",
@@ -202,7 +221,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 19
+    "priority": 19,
+    "storyPoint": 8
   },
   {
     "id": "I2-US10",
@@ -212,7 +232,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 20
+    "priority": 20,
+    "storyPoint": 3
   },
   {
     "id": "I3-US01",
@@ -222,7 +243,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 21
+    "priority": 21,
+    "storyPoint": 8
   },
   {
     "id": "I3-US02",
@@ -232,7 +254,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 22
+    "priority": 22,
+    "storyPoint": 8
   },
   {
     "id": "I3-US03",
@@ -242,7 +265,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 23
+    "priority": 23,
+    "storyPoint": 8
   },
   {
     "id": "I3-US04",
@@ -252,7 +276,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 24
+    "priority": 24,
+    "storyPoint": 8
   },
   {
     "id": "I3-US05",
@@ -262,7 +287,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 25
+    "priority": 25,
+    "storyPoint": 8
   },
   {
     "id": "I3-US06",
@@ -272,7 +298,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 26
+    "priority": 26,
+    "storyPoint": 3
   },
   {
     "id": "I3-US07",
@@ -282,7 +309,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 27
+    "priority": 27,
+    "storyPoint": 3
   },
   {
     "id": "I3-US08",
@@ -292,7 +320,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 28
+    "priority": 28,
+    "storyPoint": 8
   },
   {
     "id": "I3-US09",
@@ -302,7 +331,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 29
+    "priority": 29,
+    "storyPoint": 8
   },
   {
     "id": "I3-US10",
@@ -312,7 +342,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 30
+    "priority": 30,
+    "storyPoint": 3
   },
   {
     "id": "I4-US01",
@@ -322,7 +353,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 31
+    "priority": 31,
+    "storyPoint": 8
   },
   {
     "id": "I4-US02",
@@ -332,7 +364,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 32
+    "priority": 32,
+    "storyPoint": 8
   },
   {
     "id": "I4-US03",
@@ -342,7 +375,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 33
+    "priority": 33,
+    "storyPoint": 8
   },
   {
     "id": "I4-US04",
@@ -352,7 +386,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 34
+    "priority": 34,
+    "storyPoint": 3
   },
   {
     "id": "I4-US05",
@@ -362,7 +397,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 35
+    "priority": 35,
+    "storyPoint": 8
   },
   {
     "id": "I4-US06",
@@ -372,7 +408,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 36
+    "priority": 36,
+    "storyPoint": 8
   },
   {
     "id": "I4-US07",
@@ -382,7 +419,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 37
+    "priority": 37,
+    "storyPoint": 3
   },
   {
     "id": "I4-US08",
@@ -392,7 +430,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 38
+    "priority": 38,
+    "storyPoint": 3
   },
   {
     "id": "I4-US09",
@@ -402,7 +441,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 39
+    "priority": 39,
+    "storyPoint": 3
   },
   {
     "id": "I4-US10",
@@ -412,7 +452,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 40
+    "priority": 40,
+    "storyPoint": 3
   },
   {
     "id": "I5-US01",
@@ -422,7 +463,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 41
+    "priority": 41,
+    "storyPoint": 8
   },
   {
     "id": "I5-US02",
@@ -432,7 +474,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 42
+    "priority": 42,
+    "storyPoint": 8
   },
   {
     "id": "I5-US03",
@@ -442,7 +485,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 43
+    "priority": 43,
+    "storyPoint": 8
   },
   {
     "id": "I5-US04",
@@ -452,7 +496,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 44
+    "priority": 44,
+    "storyPoint": 8
   },
   {
     "id": "I5-US05",
@@ -462,7 +507,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 45
+    "priority": 45,
+    "storyPoint": 8
   },
   {
     "id": "I5-US06",
@@ -472,7 +518,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 46
+    "priority": 46,
+    "storyPoint": 3
   },
   {
     "id": "I5-US07",
@@ -482,7 +529,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Boutique Admin",
-    "priority": 47
+    "priority": 47,
+    "storyPoint": 8
   },
   {
     "id": "I5-US08",
@@ -492,7 +540,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 48
+    "priority": 48,
+    "storyPoint": 8
   },
   {
     "id": "I5-US09",
@@ -502,7 +551,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Boutique Admin",
-    "priority": 49
+    "priority": 49,
+    "storyPoint": 3
   },
   {
     "id": "I5-US10",
@@ -512,7 +562,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Corporate Admin",
-    "priority": 50
+    "priority": 50,
+    "storyPoint": 3
   },
   {
     "id": "I6-US01",
@@ -522,7 +573,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 51
+    "priority": 51,
+    "storyPoint": 8
   },
   {
     "id": "I6-US02",
@@ -532,7 +584,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 52
+    "priority": 52,
+    "storyPoint": 8
   },
   {
     "id": "I6-US03",
@@ -542,7 +595,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 53
+    "priority": 53,
+    "storyPoint": 8
   },
   {
     "id": "I6-US04",
@@ -552,7 +606,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 54
+    "priority": 54,
+    "storyPoint": 3
   },
   {
     "id": "I6-US05",
@@ -562,7 +617,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 55
+    "priority": 55,
+    "storyPoint": 3
   },
   {
     "id": "I6-US06",
@@ -572,7 +628,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 56
+    "priority": 56,
+    "storyPoint": 3
   },
   {
     "id": "I6-US07",
@@ -582,7 +639,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin, Corporate Admin",
-    "priority": 57
+    "priority": 57,
+    "storyPoint": 3
   },
   {
     "id": "I6-US08",
@@ -592,7 +650,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 58
+    "priority": 58,
+    "storyPoint": 3
   },
   {
     "id": "E1-US01",
@@ -602,7 +661,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 59
+    "priority": 59,
+    "storyPoint": 8
   },
   {
     "id": "E1-US02",
@@ -612,7 +672,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 60
+    "priority": 60,
+    "storyPoint": 8
   },
   {
     "id": "E1-US03",
@@ -622,7 +683,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 61
+    "priority": 61,
+    "storyPoint": 8
   },
   {
     "id": "E1-US04",
@@ -632,7 +694,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 62
+    "priority": 62,
+    "storyPoint": 8
   },
   {
     "id": "E1-US05",
@@ -642,7 +705,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 63
+    "priority": 63,
+    "storyPoint": 8
   },
   {
     "id": "E1-US06",
@@ -652,7 +716,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 64
+    "priority": 64,
+    "storyPoint": 8
   },
   {
     "id": "E1-US07",
@@ -662,7 +727,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 65
+    "priority": 65,
+    "storyPoint": 3
   },
   {
     "id": "E1-US08",
@@ -672,7 +738,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 66
+    "priority": 66,
+    "storyPoint": 8
   },
   {
     "id": "E1-US09",
@@ -682,7 +749,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 67
+    "priority": 67,
+    "storyPoint": 3
   },
   {
     "id": "E1-US10",
@@ -692,7 +760,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 68
+    "priority": 68,
+    "storyPoint": 8
   },
   {
     "id": "E2-US01",
@@ -702,7 +771,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 69
+    "priority": 69,
+    "storyPoint": 8
   },
   {
     "id": "E2-US02",
@@ -712,7 +782,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 70
+    "priority": 70,
+    "storyPoint": 8
   },
   {
     "id": "E2-US03",
@@ -722,7 +793,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 71
+    "priority": 71,
+    "storyPoint": 8
   },
   {
     "id": "E2-US04",
@@ -732,7 +804,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, Sales Associate",
-    "priority": 72
+    "priority": 72,
+    "storyPoint": 8
   },
   {
     "id": "E2-US05",
@@ -742,7 +815,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 73
+    "priority": 73,
+    "storyPoint": 8
   },
   {
     "id": "E2-US06",
@@ -752,7 +826,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 74
+    "priority": 74,
+    "storyPoint": 8
   },
   {
     "id": "E2-US07",
@@ -762,7 +837,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 75
+    "priority": 75,
+    "storyPoint": 8
   },
   {
     "id": "E2-US08",
@@ -772,7 +848,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 76
+    "priority": 76,
+    "storyPoint": 8
   },
   {
     "id": "E2-US09",
@@ -782,7 +859,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 77
+    "priority": 77,
+    "storyPoint": 3
   },
   {
     "id": "E2-US10",
@@ -792,7 +870,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 78
+    "priority": 78,
+    "storyPoint": 3
   },
   {
     "id": "E3-US01",
@@ -802,7 +881,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 79
+    "priority": 79,
+    "storyPoint": 8
   },
   {
     "id": "E3-US02",
@@ -812,7 +892,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 80
+    "priority": 80,
+    "storyPoint": 8
   },
   {
     "id": "E3-US03",
@@ -822,7 +903,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 81
+    "priority": 81,
+    "storyPoint": 8
   },
   {
     "id": "E3-US04",
@@ -832,7 +914,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 82
+    "priority": 82,
+    "storyPoint": 8
   },
   {
     "id": "E3-US05",
@@ -842,7 +925,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 83
+    "priority": 83,
+    "storyPoint": 8
   },
   {
     "id": "E3-US06",
@@ -852,7 +936,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 84
+    "priority": 84,
+    "storyPoint": 3
   },
   {
     "id": "E3-US07",
@@ -862,7 +947,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 85
+    "priority": 85,
+    "storyPoint": 3
   },
   {
     "id": "E3-US08",
@@ -872,7 +958,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 86
+    "priority": 86,
+    "storyPoint": 3
   },
   {
     "id": "E3-US09",
@@ -882,7 +969,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 87
+    "priority": 87,
+    "storyPoint": 8
   },
   {
     "id": "E3-US10",
@@ -892,7 +980,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 88
+    "priority": 88,
+    "storyPoint": 3
   },
   {
     "id": "E4-US01",
@@ -902,7 +991,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 89
+    "priority": 89,
+    "storyPoint": 8
   },
   {
     "id": "E4-US02",
@@ -912,7 +1002,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 90
+    "priority": 90,
+    "storyPoint": 8
   },
   {
     "id": "E4-US03",
@@ -922,7 +1013,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 91
+    "priority": 91,
+    "storyPoint": 8
   },
   {
     "id": "E4-US04",
@@ -932,7 +1024,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin, Corporate Admin",
-    "priority": 92
+    "priority": 92,
+    "storyPoint": 8
   },
   {
     "id": "E4-US05",
@@ -942,7 +1035,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 93
+    "priority": 93,
+    "storyPoint": 8
   },
   {
     "id": "E4-US06",
@@ -952,7 +1046,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 94
+    "priority": 94,
+    "storyPoint": 3
   },
   {
     "id": "E4-US07",
@@ -962,7 +1057,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 95
+    "priority": 95,
+    "storyPoint": 3
   },
   {
     "id": "E4-US08",
@@ -972,7 +1068,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 96
+    "priority": 96,
+    "storyPoint": 3
   },
   {
     "id": "E4-US09",
@@ -982,7 +1079,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 97
+    "priority": 97,
+    "storyPoint": 3
   },
   {
     "id": "E4-US10",
@@ -992,7 +1090,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin, Corporate Admin",
-    "priority": 98
+    "priority": 98,
+    "storyPoint": 3
   },
   {
     "id": "E5-US01",
@@ -1002,7 +1101,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 99
+    "priority": 99,
+    "storyPoint": 8
   },
   {
     "id": "E5-US02",
@@ -1012,7 +1112,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 100
+    "priority": 100,
+    "storyPoint": 8
   },
   {
     "id": "E5-US03",
@@ -1022,7 +1123,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 101
+    "priority": 101,
+    "storyPoint": 8
   },
   {
     "id": "E5-US04",
@@ -1032,7 +1134,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 102
+    "priority": 102,
+    "storyPoint": 3
   },
   {
     "id": "E5-US05",
@@ -1042,7 +1145,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 103
+    "priority": 103,
+    "storyPoint": 3
   },
   {
     "id": "E5-US06",
@@ -1052,7 +1156,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 104
+    "priority": 104,
+    "storyPoint": 8
   },
   {
     "id": "E5-US07",
@@ -1062,7 +1167,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 105
+    "priority": 105,
+    "storyPoint": 3
   },
   {
     "id": "E5-US08",
@@ -1072,7 +1178,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 106
+    "priority": 106,
+    "storyPoint": 3
   },
   {
     "id": "E6-US01",
@@ -1082,7 +1189,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 107
+    "priority": 107,
+    "storyPoint": 8
   },
   {
     "id": "E6-US02",
@@ -1092,7 +1200,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 108
+    "priority": 108,
+    "storyPoint": 8
   },
   {
     "id": "E6-US03",
@@ -1102,7 +1211,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 109
+    "priority": 109,
+    "storyPoint": 3
   },
   {
     "id": "E6-US04",
@@ -1112,7 +1222,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 110
+    "priority": 110,
+    "storyPoint": 3
   },
   {
     "id": "E6-US05",
@@ -1122,7 +1233,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 111
+    "priority": 111,
+    "storyPoint": 3
   },
   {
     "id": "E6-US06",
@@ -1132,7 +1244,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 112
+    "priority": 112,
+    "storyPoint": 3
   },
   {
     "id": "E6-US07",
@@ -1142,7 +1255,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Low",
     "businessValue": "Medium",
     "interdependency": "Boutique Admin",
-    "priority": 113
+    "priority": 113,
+    "storyPoint": 2
   },
   {
     "id": "E6-US08",
@@ -1152,7 +1266,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Low",
     "businessValue": "Medium",
     "interdependency": "Inventory Intelligence OS, Corporate Admin",
-    "priority": 114
+    "priority": 114,
+    "storyPoint": 2
   },
   {
     "id": "B1-US01",
@@ -1162,7 +1277,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 115
+    "priority": 115,
+    "storyPoint": 8
   },
   {
     "id": "B1-US02",
@@ -1172,7 +1288,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 116
+    "priority": 116,
+    "storyPoint": 8
   },
   {
     "id": "B1-US03",
@@ -1182,7 +1299,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 117
+    "priority": 117,
+    "storyPoint": 8
   },
   {
     "id": "B1-US04",
@@ -1192,7 +1310,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 118
+    "priority": 118,
+    "storyPoint": 8
   },
   {
     "id": "B1-US05",
@@ -1202,7 +1321,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 119
+    "priority": 119,
+    "storyPoint": 8
   },
   {
     "id": "B1-US06",
@@ -1212,7 +1332,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 120
+    "priority": 120,
+    "storyPoint": 8
   },
   {
     "id": "B1-US07",
@@ -1222,7 +1343,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 121
+    "priority": 121,
+    "storyPoint": 8
   },
   {
     "id": "B1-US08",
@@ -1232,7 +1354,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Low",
     "businessValue": "Medium",
     "interdependency": "Core Platform",
-    "priority": 122
+    "priority": 122,
+    "storyPoint": 2
   },
   {
     "id": "B1-US09",
@@ -1242,7 +1365,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 123
+    "priority": 123,
+    "storyPoint": 3
   },
   {
     "id": "B1-US10",
@@ -1252,7 +1376,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 124
+    "priority": 124,
+    "storyPoint": 8
   },
   {
     "id": "B2-US01",
@@ -1262,7 +1387,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 125
+    "priority": 125,
+    "storyPoint": 8
   },
   {
     "id": "B2-US02",
@@ -1272,7 +1398,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 126
+    "priority": 126,
+    "storyPoint": 8
   },
   {
     "id": "B2-US03",
@@ -1282,7 +1409,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 127
+    "priority": 127,
+    "storyPoint": 8
   },
   {
     "id": "B2-US04",
@@ -1292,7 +1420,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 128
+    "priority": 128,
+    "storyPoint": 8
   },
   {
     "id": "B2-US05",
@@ -1302,7 +1431,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 129
+    "priority": 129,
+    "storyPoint": 3
   },
   {
     "id": "B2-US06",
@@ -1312,7 +1442,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 130
+    "priority": 130,
+    "storyPoint": 3
   },
   {
     "id": "B2-US07",
@@ -1322,7 +1453,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 131
+    "priority": 131,
+    "storyPoint": 3
   },
   {
     "id": "B2-US08",
@@ -1332,7 +1464,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 132
+    "priority": 132,
+    "storyPoint": 8
   },
   {
     "id": "B2-US09",
@@ -1342,7 +1475,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 133
+    "priority": 133,
+    "storyPoint": 3
   },
   {
     "id": "B2-US10",
@@ -1352,7 +1486,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 134
+    "priority": 134,
+    "storyPoint": 3
   },
   {
     "id": "B3-US01",
@@ -1362,7 +1497,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 135
+    "priority": 135,
+    "storyPoint": 8
   },
   {
     "id": "B3-US02",
@@ -1372,7 +1508,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 136
+    "priority": 136,
+    "storyPoint": 8
   },
   {
     "id": "B3-US03",
@@ -1382,7 +1519,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 137
+    "priority": 137,
+    "storyPoint": 8
   },
   {
     "id": "B3-US04",
@@ -1392,7 +1530,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 138
+    "priority": 138,
+    "storyPoint": 3
   },
   {
     "id": "B3-US05",
@@ -1402,7 +1541,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 139
+    "priority": 139,
+    "storyPoint": 3
   },
   {
     "id": "B3-US06",
@@ -1412,7 +1552,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 140
+    "priority": 140,
+    "storyPoint": 8
   },
   {
     "id": "B3-US07",
@@ -1422,7 +1563,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 141
+    "priority": 141,
+    "storyPoint": 3
   },
   {
     "id": "B3-US08",
@@ -1432,7 +1574,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 142
+    "priority": 142,
+    "storyPoint": 3
   },
   {
     "id": "B3-US09",
@@ -1442,7 +1585,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Low",
     "businessValue": "Medium",
     "interdependency": "Corporate Admin",
-    "priority": 143
+    "priority": 143,
+    "storyPoint": 2
   },
   {
     "id": "B3-US10",
@@ -1452,7 +1596,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 144
+    "priority": 144,
+    "storyPoint": 8
   },
   {
     "id": "B4-US01",
@@ -1462,7 +1607,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 145
+    "priority": 145,
+    "storyPoint": 8
   },
   {
     "id": "B4-US02",
@@ -1472,7 +1618,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 146
+    "priority": 146,
+    "storyPoint": 8
   },
   {
     "id": "B4-US03",
@@ -1482,7 +1629,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 147
+    "priority": 147,
+    "storyPoint": 8
   },
   {
     "id": "B4-US04",
@@ -1492,7 +1640,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 148
+    "priority": 148,
+    "storyPoint": 8
   },
   {
     "id": "B4-US05",
@@ -1502,7 +1651,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 149
+    "priority": 149,
+    "storyPoint": 8
   },
   {
     "id": "B4-US06",
@@ -1512,7 +1662,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 150
+    "priority": 150,
+    "storyPoint": 8
   },
   {
     "id": "B4-US07",
@@ -1522,7 +1673,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 151
+    "priority": 151,
+    "storyPoint": 3
   },
   {
     "id": "B4-US08",
@@ -1532,7 +1684,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 152
+    "priority": 152,
+    "storyPoint": 3
   },
   {
     "id": "B4-US09",
@@ -1542,7 +1695,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, Sales Associate",
-    "priority": 153
+    "priority": 153,
+    "storyPoint": 8
   },
   {
     "id": "B4-US10",
@@ -1552,7 +1706,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 154
+    "priority": 154,
+    "storyPoint": 3
   },
   {
     "id": "B5-US01",
@@ -1562,7 +1717,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 155
+    "priority": 155,
+    "storyPoint": 8
   },
   {
     "id": "B5-US02",
@@ -1572,7 +1728,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 156
+    "priority": 156,
+    "storyPoint": 8
   },
   {
     "id": "B5-US03",
@@ -1582,7 +1739,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 157
+    "priority": 157,
+    "storyPoint": 8
   },
   {
     "id": "B5-US04",
@@ -1592,7 +1750,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 158
+    "priority": 158,
+    "storyPoint": 8
   },
   {
     "id": "B5-US05",
@@ -1602,7 +1761,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 159
+    "priority": 159,
+    "storyPoint": 8
   },
   {
     "id": "B5-US06",
@@ -1612,7 +1772,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 160
+    "priority": 160,
+    "storyPoint": 3
   },
   {
     "id": "B5-US07",
@@ -1622,7 +1783,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 161
+    "priority": 161,
+    "storyPoint": 8
   },
   {
     "id": "B5-US08",
@@ -1632,7 +1794,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin, Sales Associate",
-    "priority": 162
+    "priority": 162,
+    "storyPoint": 3
   },
   {
     "id": "B5-US09",
@@ -1642,7 +1805,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 163
+    "priority": 163,
+    "storyPoint": 3
   },
   {
     "id": "B5-US10",
@@ -1652,7 +1816,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 164
+    "priority": 164,
+    "storyPoint": 3
   },
   {
     "id": "B6-US01",
@@ -1662,7 +1827,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 165
+    "priority": 165,
+    "storyPoint": 8
   },
   {
     "id": "B6-US02",
@@ -1672,7 +1838,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 166
+    "priority": 166,
+    "storyPoint": 8
   },
   {
     "id": "B6-US03",
@@ -1682,7 +1849,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 167
+    "priority": 167,
+    "storyPoint": 3
   },
   {
     "id": "B6-US04",
@@ -1692,7 +1860,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 168
+    "priority": 168,
+    "storyPoint": 8
   },
   {
     "id": "B6-US05",
@@ -1702,7 +1871,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 169
+    "priority": 169,
+    "storyPoint": 8
   },
   {
     "id": "B6-US06",
@@ -1712,7 +1882,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 170
+    "priority": 170,
+    "storyPoint": 8
   },
   {
     "id": "B6-US07",
@@ -1722,7 +1893,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 171
+    "priority": 171,
+    "storyPoint": 3
   },
   {
     "id": "B6-US08",
@@ -1732,7 +1904,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 172
+    "priority": 172,
+    "storyPoint": 3
   },
   {
     "id": "C1-US01",
@@ -1742,7 +1915,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 173
+    "priority": 173,
+    "storyPoint": 8
   },
   {
     "id": "C1-US02",
@@ -1752,7 +1926,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 174
+    "priority": 174,
+    "storyPoint": 8
   },
   {
     "id": "C1-US03",
@@ -1762,7 +1937,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 175
+    "priority": 175,
+    "storyPoint": 8
   },
   {
     "id": "C1-US04",
@@ -1772,7 +1948,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 176
+    "priority": 176,
+    "storyPoint": 8
   },
   {
     "id": "C1-US05",
@@ -1782,7 +1959,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 177
+    "priority": 177,
+    "storyPoint": 8
   },
   {
     "id": "C1-US06",
@@ -1792,7 +1970,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 178
+    "priority": 178,
+    "storyPoint": 8
   },
   {
     "id": "C1-US07",
@@ -1802,7 +1981,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 179
+    "priority": 179,
+    "storyPoint": 3
   },
   {
     "id": "C1-US08",
@@ -1812,7 +1992,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 180
+    "priority": 180,
+    "storyPoint": 8
   },
   {
     "id": "C1-US09",
@@ -1822,7 +2003,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 181
+    "priority": 181,
+    "storyPoint": 8
   },
   {
     "id": "C1-US10",
@@ -1832,7 +2014,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Low",
     "businessValue": "Medium",
     "interdependency": "Core Platform",
-    "priority": 182
+    "priority": 182,
+    "storyPoint": 2
   },
   {
     "id": "C2-US01",
@@ -1842,7 +2025,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, After-Sales Service",
-    "priority": 183
+    "priority": 183,
+    "storyPoint": 8
   },
   {
     "id": "C2-US02",
@@ -1852,7 +2036,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 184
+    "priority": 184,
+    "storyPoint": 8
   },
   {
     "id": "C2-US03",
@@ -1862,7 +2047,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 185
+    "priority": 185,
+    "storyPoint": 8
   },
   {
     "id": "C2-US04",
@@ -1872,7 +2058,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 186
+    "priority": 186,
+    "storyPoint": 8
   },
   {
     "id": "C2-US05",
@@ -1882,7 +2069,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 187
+    "priority": 187,
+    "storyPoint": 3
   },
   {
     "id": "C2-US06",
@@ -1892,7 +2080,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 188
+    "priority": 188,
+    "storyPoint": 8
   },
   {
     "id": "C2-US07",
@@ -1902,7 +2091,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 189
+    "priority": 189,
+    "storyPoint": 8
   },
   {
     "id": "C2-US08",
@@ -1912,7 +2102,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, After-Sales Service, Sales Associate",
-    "priority": 190
+    "priority": 190,
+    "storyPoint": 8
   },
   {
     "id": "C2-US09",
@@ -1922,7 +2113,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, After-Sales Service, Sales Associate",
-    "priority": 191
+    "priority": 191,
+    "storyPoint": 3
   },
   {
     "id": "C2-US10",
@@ -1932,7 +2124,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 192
+    "priority": 192,
+    "storyPoint": 3
   },
   {
     "id": "C3-US01",
@@ -1942,7 +2135,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 193
+    "priority": 193,
+    "storyPoint": 8
   },
   {
     "id": "C3-US02",
@@ -1952,7 +2146,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 194
+    "priority": 194,
+    "storyPoint": 8
   },
   {
     "id": "C3-US03",
@@ -1962,7 +2157,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 195
+    "priority": 195,
+    "storyPoint": 3
   },
   {
     "id": "C3-US04",
@@ -1972,7 +2168,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, After-Sales Service",
-    "priority": 196
+    "priority": 196,
+    "storyPoint": 8
   },
   {
     "id": "C3-US05",
@@ -1982,7 +2179,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 197
+    "priority": 197,
+    "storyPoint": 8
   },
   {
     "id": "C3-US06",
@@ -1992,7 +2190,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 198
+    "priority": 198,
+    "storyPoint": 8
   },
   {
     "id": "C3-US07",
@@ -2002,7 +2201,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 199
+    "priority": 199,
+    "storyPoint": 3
   },
   {
     "id": "C3-US08",
@@ -2012,7 +2212,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 200
+    "priority": 200,
+    "storyPoint": 8
   },
   {
     "id": "C3-US09",
@@ -2022,7 +2223,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 201
+    "priority": 201,
+    "storyPoint": 3
   },
   {
     "id": "C3-US10",
@@ -2032,7 +2234,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 202
+    "priority": 202,
+    "storyPoint": 3
   },
   {
     "id": "C4-US01",
@@ -2042,7 +2245,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 203
+    "priority": 203,
+    "storyPoint": 8
   },
   {
     "id": "C4-US02",
@@ -2052,7 +2256,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 204
+    "priority": 204,
+    "storyPoint": 8
   },
   {
     "id": "C4-US03",
@@ -2062,7 +2267,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 205
+    "priority": 205,
+    "storyPoint": 8
   },
   {
     "id": "C4-US04",
@@ -2072,7 +2278,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 206
+    "priority": 206,
+    "storyPoint": 8
   },
   {
     "id": "C4-US05",
@@ -2082,7 +2289,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, Sales Associate",
-    "priority": 207
+    "priority": 207,
+    "storyPoint": 8
   },
   {
     "id": "C4-US06",
@@ -2092,7 +2300,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 208
+    "priority": 208,
+    "storyPoint": 8
   },
   {
     "id": "C4-US07",
@@ -2102,7 +2311,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 209
+    "priority": 209,
+    "storyPoint": 8
   },
   {
     "id": "C4-US08",
@@ -2112,7 +2322,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 210
+    "priority": 210,
+    "storyPoint": 8
   },
   {
     "id": "C4-US09",
@@ -2122,7 +2333,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 211
+    "priority": 211,
+    "storyPoint": 3
   },
   {
     "id": "C4-US10",
@@ -2132,7 +2344,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 212
+    "priority": 212,
+    "storyPoint": 3
   },
   {
     "id": "C5-US01",
@@ -2142,7 +2355,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 213
+    "priority": 213,
+    "storyPoint": 8
   },
   {
     "id": "C5-US02",
@@ -2152,7 +2366,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 214
+    "priority": 214,
+    "storyPoint": 8
   },
   {
     "id": "C5-US03",
@@ -2162,7 +2377,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service, Sales Associate",
-    "priority": 215
+    "priority": 215,
+    "storyPoint": 8
   },
   {
     "id": "C5-US04",
@@ -2172,7 +2388,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Sales Associate",
-    "priority": 216
+    "priority": 216,
+    "storyPoint": 8
   },
   {
     "id": "C5-US05",
@@ -2182,7 +2399,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 217
+    "priority": 217,
+    "storyPoint": 3
   },
   {
     "id": "C5-US06",
@@ -2192,7 +2410,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 218
+    "priority": 218,
+    "storyPoint": 8
   },
   {
     "id": "C5-US07",
@@ -2202,7 +2421,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 219
+    "priority": 219,
+    "storyPoint": 3
   },
   {
     "id": "C5-US08",
@@ -2212,7 +2432,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 220
+    "priority": 220,
+    "storyPoint": 3
   },
   {
     "id": "C5-US09",
@@ -2222,7 +2443,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 221
+    "priority": 221,
+    "storyPoint": 3
   },
   {
     "id": "C5-US10",
@@ -2232,7 +2454,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 222
+    "priority": 222,
+    "storyPoint": 3
   },
   {
     "id": "C6-US01",
@@ -2242,7 +2465,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 223
+    "priority": 223,
+    "storyPoint": 8
   },
   {
     "id": "C6-US02",
@@ -2252,7 +2476,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 224
+    "priority": 224,
+    "storyPoint": 8
   },
   {
     "id": "C6-US03",
@@ -2262,7 +2487,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 225
+    "priority": 225,
+    "storyPoint": 8
   },
   {
     "id": "C6-US04",
@@ -2272,7 +2498,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, Sales Associate",
-    "priority": 226
+    "priority": 226,
+    "storyPoint": 8
   },
   {
     "id": "C6-US05",
@@ -2282,7 +2509,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 227
+    "priority": 227,
+    "storyPoint": 3
   },
   {
     "id": "C6-US06",
@@ -2292,7 +2520,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 228
+    "priority": 228,
+    "storyPoint": 3
   },
   {
     "id": "C6-US07",
@@ -2302,7 +2531,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 229
+    "priority": 229,
+    "storyPoint": 8
   },
   {
     "id": "C6-US08",
@@ -2312,7 +2542,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Low",
     "businessValue": "Medium",
     "interdependency": "Core Platform",
-    "priority": 230
+    "priority": 230,
+    "storyPoint": 2
   },
   {
     "id": "S1-US01",
@@ -2322,7 +2553,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 231
+    "priority": 231,
+    "storyPoint": 8
   },
   {
     "id": "S1-US02",
@@ -2332,7 +2564,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 232
+    "priority": 232,
+    "storyPoint": 8
   },
   {
     "id": "S1-US03",
@@ -2342,7 +2575,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "After-Sales Service",
-    "priority": 233
+    "priority": 233,
+    "storyPoint": 8
   },
   {
     "id": "S1-US04",
@@ -2352,7 +2586,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 234
+    "priority": 234,
+    "storyPoint": 8
   },
   {
     "id": "S1-US05",
@@ -2362,7 +2597,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 235
+    "priority": 235,
+    "storyPoint": 8
   },
   {
     "id": "S1-US06",
@@ -2372,7 +2608,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 236
+    "priority": 236,
+    "storyPoint": 8
   },
   {
     "id": "S1-US07",
@@ -2382,7 +2619,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 237
+    "priority": 237,
+    "storyPoint": 8
   },
   {
     "id": "S1-US08",
@@ -2392,7 +2630,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 238
+    "priority": 238,
+    "storyPoint": 3
   },
   {
     "id": "S1-US09",
@@ -2402,7 +2641,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 239
+    "priority": 239,
+    "storyPoint": 8
   },
   {
     "id": "S1-US10",
@@ -2412,7 +2652,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 240
+    "priority": 240,
+    "storyPoint": 3
   },
   {
     "id": "S2-US01",
@@ -2422,7 +2663,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 241
+    "priority": 241,
+    "storyPoint": 8
   },
   {
     "id": "S2-US02",
@@ -2432,7 +2674,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 242
+    "priority": 242,
+    "storyPoint": 8
   },
   {
     "id": "S2-US03",
@@ -2442,7 +2685,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 243
+    "priority": 243,
+    "storyPoint": 8
   },
   {
     "id": "S2-US04",
@@ -2452,7 +2696,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 244
+    "priority": 244,
+    "storyPoint": 8
   },
   {
     "id": "S2-US05",
@@ -2462,7 +2707,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 245
+    "priority": 245,
+    "storyPoint": 8
   },
   {
     "id": "S2-US06",
@@ -2472,7 +2718,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 246
+    "priority": 246,
+    "storyPoint": 3
   },
   {
     "id": "S2-US07",
@@ -2482,7 +2729,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 247
+    "priority": 247,
+    "storyPoint": 8
   },
   {
     "id": "S2-US08",
@@ -2492,7 +2740,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 248
+    "priority": 248,
+    "storyPoint": 3
   },
   {
     "id": "S2-US09",
@@ -2502,7 +2751,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 249
+    "priority": 249,
+    "storyPoint": 3
   },
   {
     "id": "S2-US10",
@@ -2512,7 +2762,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 250
+    "priority": 250,
+    "storyPoint": 3
   },
   {
     "id": "S3-US01",
@@ -2522,7 +2773,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 251
+    "priority": 251,
+    "storyPoint": 8
   },
   {
     "id": "S3-US02",
@@ -2532,7 +2784,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 252
+    "priority": 252,
+    "storyPoint": 8
   },
   {
     "id": "S3-US03",
@@ -2542,7 +2795,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 253
+    "priority": 253,
+    "storyPoint": 8
   },
   {
     "id": "S3-US04",
@@ -2552,7 +2806,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 254
+    "priority": 254,
+    "storyPoint": 8
   },
   {
     "id": "S3-US05",
@@ -2562,7 +2817,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 255
+    "priority": 255,
+    "storyPoint": 8
   },
   {
     "id": "S3-US06",
@@ -2572,7 +2828,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 256
+    "priority": 256,
+    "storyPoint": 8
   },
   {
     "id": "S3-US07",
@@ -2582,7 +2839,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 257
+    "priority": 257,
+    "storyPoint": 8
   },
   {
     "id": "S3-US08",
@@ -2592,7 +2850,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 258
+    "priority": 258,
+    "storyPoint": 3
   },
   {
     "id": "S3-US09",
@@ -2602,7 +2861,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 259
+    "priority": 259,
+    "storyPoint": 3
   },
   {
     "id": "S3-US10",
@@ -2612,7 +2872,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Low",
     "businessValue": "Medium",
     "interdependency": "Boutique Admin",
-    "priority": 260
+    "priority": 260,
+    "storyPoint": 2
   },
   {
     "id": "S4-US01",
@@ -2622,7 +2883,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 261
+    "priority": 261,
+    "storyPoint": 8
   },
   {
     "id": "S4-US02",
@@ -2632,7 +2894,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 262
+    "priority": 262,
+    "storyPoint": 8
   },
   {
     "id": "S4-US03",
@@ -2642,7 +2905,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 263
+    "priority": 263,
+    "storyPoint": 8
   },
   {
     "id": "S4-US04",
@@ -2652,7 +2916,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 264
+    "priority": 264,
+    "storyPoint": 8
   },
   {
     "id": "S4-US05",
@@ -2662,7 +2927,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 265
+    "priority": 265,
+    "storyPoint": 8
   },
   {
     "id": "S4-US06",
@@ -2672,7 +2938,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 266
+    "priority": 266,
+    "storyPoint": 8
   },
   {
     "id": "S4-US07",
@@ -2682,7 +2949,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 267
+    "priority": 267,
+    "storyPoint": 8
   },
   {
     "id": "S4-US08",
@@ -2692,7 +2960,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 268
+    "priority": 268,
+    "storyPoint": 8
   },
   {
     "id": "S4-US09",
@@ -2702,7 +2971,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 269
+    "priority": 269,
+    "storyPoint": 8
   },
   {
     "id": "S4-US10",
@@ -2712,7 +2982,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 270
+    "priority": 270,
+    "storyPoint": 3
   },
   {
     "id": "S5-US01",
@@ -2722,7 +2993,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 271
+    "priority": 271,
+    "storyPoint": 8
   },
   {
     "id": "S5-US02",
@@ -2732,7 +3004,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 272
+    "priority": 272,
+    "storyPoint": 8
   },
   {
     "id": "S5-US03",
@@ -2742,7 +3015,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 273
+    "priority": 273,
+    "storyPoint": 8
   },
   {
     "id": "S5-US04",
@@ -2752,7 +3026,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 274
+    "priority": 274,
+    "storyPoint": 8
   },
   {
     "id": "S5-US05",
@@ -2762,7 +3037,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 275
+    "priority": 275,
+    "storyPoint": 8
   },
   {
     "id": "S5-US06",
@@ -2772,7 +3048,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS",
-    "priority": 276
+    "priority": 276,
+    "storyPoint": 8
   },
   {
     "id": "S5-US07",
@@ -2782,7 +3059,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 277
+    "priority": 277,
+    "storyPoint": 8
   },
   {
     "id": "S5-US08",
@@ -2792,7 +3070,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 278
+    "priority": 278,
+    "storyPoint": 3
   },
   {
     "id": "S5-US09",
@@ -2802,7 +3081,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 279
+    "priority": 279,
+    "storyPoint": 3
   },
   {
     "id": "S5-US10",
@@ -2812,7 +3092,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 280
+    "priority": 280,
+    "storyPoint": 3
   },
   {
     "id": "S6-US01",
@@ -2822,7 +3103,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 281
+    "priority": 281,
+    "storyPoint": 8
   },
   {
     "id": "S6-US02",
@@ -2832,7 +3114,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Inventory Intelligence OS, After-Sales Service",
-    "priority": 282
+    "priority": 282,
+    "storyPoint": 8
   },
   {
     "id": "S6-US03",
@@ -2842,7 +3125,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 283
+    "priority": 283,
+    "storyPoint": 3
   },
   {
     "id": "S6-US04",
@@ -2852,7 +3136,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 284
+    "priority": 284,
+    "storyPoint": 8
   },
   {
     "id": "S6-US05",
@@ -2862,7 +3147,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 285
+    "priority": 285,
+    "storyPoint": 3
   },
   {
     "id": "S6-US06",
@@ -2872,7 +3158,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Corporate Admin",
-    "priority": 286
+    "priority": 286,
+    "storyPoint": 3
   },
   {
     "id": "S6-US07",
@@ -2882,7 +3169,8 @@ export const userStoriesData: UserStory[] = [
     "risk": "Medium",
     "businessValue": "High",
     "interdependency": "Boutique Admin",
-    "priority": 287
+    "priority": 287,
+    "storyPoint": 3
   },
   {
     "id": "S6-US08",
@@ -2892,6 +3180,7 @@ export const userStoriesData: UserStory[] = [
     "risk": "High",
     "businessValue": "High",
     "interdependency": "Core Platform",
-    "priority": 288
+    "priority": 288,
+    "storyPoint": 8
   }
 ];

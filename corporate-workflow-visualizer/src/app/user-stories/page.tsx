@@ -4,7 +4,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { userStoriesData, MoscowPriority, RiskLevel, BusinessValue, UserStory } from '../../data/userStories';
 import { supabase } from '../../utils/supabase';
 
-type SortField = 'id' | 'priority' | 'moscow' | 'risk' | 'businessValue';
+type SortField = 'id' | 'priority' | 'moscow' | 'risk' | 'businessValue' | 'storyPoint';
 type SortDirection = 'asc' | 'desc';
 
 export default function UserStoriesPage() {
@@ -353,6 +353,12 @@ export default function UserStoriesPage() {
                   >
                     Business Value {sortField === 'businessValue' && (sortDir === 'asc' ? '↑' : '↓')}
                   </th>
+                  <th 
+                    className="p-4 font-bold whitespace-nowrap text-center cursor-pointer hover:text-[#C9540A] select-none"
+                    onClick={() => handleSort('storyPoint')}
+                  >
+                    Pts {sortField === 'storyPoint' && (sortDir === 'asc' ? '↑' : '↓')}
+                  </th>
                   <th className="p-4 font-bold min-w-[150px]">Interdependency</th>
                   <th 
                     className="p-4 font-bold whitespace-nowrap text-center cursor-pointer hover:text-[#C9540A] select-none"
@@ -412,6 +418,11 @@ export default function UserStoriesPage() {
                           </span>
                         </div>
                       </div>
+                    </td>
+                    <td className="p-4 align-top text-center">
+                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#1A1A1A]/5 text-[#1A1A1A] font-bold text-sm border border-[#1A1A1A]/10">
+                        {story.storyPoint}
+                      </span>
                     </td>
                     <td className="p-4 align-top text-sm text-[#1A1A1A]/90">
                       {story.interdependency}

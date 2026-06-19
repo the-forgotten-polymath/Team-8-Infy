@@ -31,6 +31,13 @@ function getBusinessValue(moscow) {
   return 'Low';
 }
 
+const getStoryPoint = (moscow, risk) => {
+  if (moscow === 'Must have') return risk === 'High' ? 8 : 5;
+  if (moscow === 'Should have') return risk === 'High' ? 5 : 3;
+  if (moscow === 'Could have') return 2;
+  return 1;
+};
+
 let counter = 1;
 
 const mapInterdependencyToSections = (text, currentSection) => {
@@ -87,15 +94,17 @@ for (const prd of prds) {
         // Exclude headers
         if (id !== 'ID' && !id.includes('---')) {
           const moscow = getMoscow(priorityRaw);
+          const risk = getRisk(moscow);
           allStories.push({
             id: id,
             section: prd.section,
             story: story,
             moscow: moscow,
-            risk: getRisk(moscow),
+            risk: risk,
             businessValue: getBusinessValue(moscow),
             interdependency: generatedInterdependency === story ? 'Core Platform' : generatedInterdependency.split('[Depends on: ')[1].replace(']', ''),
-            priority: counter++
+            priority: counter++,
+            storyPoint: getStoryPoint(moscow, risk)
           });
         }
       } else if (line.trim() === '') {
@@ -118,6 +127,7 @@ export interface UserStory {
   businessValue: BusinessValue;
   interdependency: string;
   priority: number;
+  storyPoint: number;
 }
 
 export const userStoriesData: UserStory[] = ${JSON.stringify(allStories, null, 2)};
