@@ -14,6 +14,7 @@ export default function UserStoriesPage() {
   const [sortField, setSortField] = useState<SortField>('priority');
   const [sortDir, setSortDir] = useState<SortDirection>('asc');
   const [selectedStory, setSelectedStory] = useState<UserStory | null>(null);
+  const [checkedStories, setCheckedStories] = useState<Set<string>>(new Set());
 
   const sections = Array.from(new Set(userStoriesData.map((s) => s.section)));
 
@@ -51,6 +52,25 @@ export default function UserStoriesPage() {
     } else {
       setSortField(field);
       setSortDir('asc');
+    }
+  };
+
+  const toggleCheck = (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    const newSet = new Set(checkedStories);
+    if (newSet.has(id)) {
+      newSet.delete(id);
+    } else {
+      newSet.add(id);
+    }
+    setCheckedStories(newSet);
+  };
+
+  const toggleAll = () => {
+    if (checkedStories.size === filteredAndSortedData.length) {
+      setCheckedStories(new Set());
+    } else {
+      setCheckedStories(new Set(filteredAndSortedData.map(s => s.id)));
     }
   };
 
@@ -226,6 +246,14 @@ export default function UserStoriesPage() {
             <table className="w-full text-left border-collapse">
               <thead className="sticky top-0 bg-[#f4f2ef] shadow-sm z-10">
                 <tr className="border-b border-[#1A1A1A]/10 text-xs tracking-wider uppercase text-[#1A1A1A]">
+                  <th className="p-4 w-12 text-center">
+                    <input 
+                      type="checkbox" 
+                      checked={filteredAndSortedData.length > 0 && checkedStories.size === filteredAndSortedData.length}
+                      onChange={toggleAll}
+                      className="w-4 h-4 text-[#C9540A] rounded border-[#1A1A1A]/20 focus:ring-[#C9540A] focus:ring-2 accent-[#C9540A] cursor-pointer"
+                    />
+                  </th>
                   <th className="p-4 font-bold whitespace-nowrap">Section</th>
                   <th 
                     className="p-4 font-bold whitespace-nowrap cursor-pointer hover:text-[#C9540A] select-none"
@@ -268,6 +296,14 @@ export default function UserStoriesPage() {
                     onClick={() => setSelectedStory(story)}
                     className="hover:bg-[#FAF8F5] transition-colors group cursor-pointer"
                   >
+                    <td className="p-4 align-top text-center" onClick={(e) => toggleCheck(e, story.id)}>
+                      <input 
+                        type="checkbox" 
+                        checked={checkedStories.has(story.id)}
+                        readOnly
+                        className="w-4 h-4 text-[#C9540A] rounded border-[#1A1A1A]/20 focus:ring-[#C9540A] focus:ring-2 accent-[#C9540A] cursor-pointer"
+                      />
+                    </td>
                     <td className="p-4 align-top text-sm font-medium text-[#1A1A1A]">
                       {story.section}
                     </td>
@@ -300,7 +336,7 @@ export default function UserStoriesPage() {
                 ))}
                 {filteredAndSortedData.length === 0 && (
                   <tr>
-                    <td colSpan={8} className="p-12 text-center text-[#1A1A1A] italic">
+                    <td colSpan={9} className="p-12 text-center text-[#1A1A1A] italic">
                       No user stories match the selected filters.
                     </td>
                   </tr>
