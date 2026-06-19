@@ -77,7 +77,13 @@ export default function UserStoriesPage() {
       translation: `This user story means: The system empowers the ${role} to ${action}. In the luxury retail context, this directly solves pain points to ${benefit}, preventing manual errors.`,
       scenario: `Imagine a busy day at the boutique or corporate office. A ${role} needs to ${action}. Instead of relying on manual legacy systems, they open the Hutch OS Dashboard. Behind the scenes, the ${storyObj.section} engine analyzes massive amounts of data points to execute this request.`,
       output: `The OS instantly generates the necessary data and UI, meaning the ${role} successfully achieves their goal to ${benefit}.`,
-      advantage: `In legacy systems, achieving this would require multiple fragmented tools and manual guesswork. With Hutch OS, the AI connects the dots automatically, providing a frictionless experience that empowers the ${role} to focus on luxury client experiences!`
+      advantage: `In legacy systems, achieving this would require multiple fragmented tools and manual guesswork. With Hutch OS, the AI connects the dots automatically, providing a frictionless experience that empowers the ${role} to focus on luxury client experiences!`,
+      checklist: [
+        `Ensure the UI properly displays necessary data fields for the ${role}.`,
+        `Validate that the system successfully executes the core action: "${action.substring(0, 50)}${action.length > 50 ? '...' : ''}".`,
+        `Confirm the ${storyObj.section} backend securely processes the logic without delay.`,
+        `Verify the end result demonstrably achieves the goal: ${benefit}.`
+      ]
     };
   }
 
@@ -347,6 +353,20 @@ export default function UserStoriesPage() {
                       <p className="text-white/90 leading-relaxed font-playfair italic text-lg">
                         "{expl.output}"
                       </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm uppercase tracking-widest font-bold text-[#1A1A1A] mb-4 flex items-center gap-2">
+                        <span className="text-xl">✅</span> Acceptance Criteria
+                      </h3>
+                      <div className="flex flex-col gap-3 bg-[#FAF8F5] p-5 rounded-md border border-[#1A1A1A]/10">
+                        {expl.checklist.map((item, idx) => (
+                          <label key={idx} className="flex items-start gap-3 cursor-pointer group">
+                            <input type="checkbox" className="mt-1 w-4 h-4 text-[#C9540A] rounded border-[#1A1A1A]/20 focus:ring-[#C9540A] focus:ring-2 accent-[#C9540A] transition-all cursor-pointer" />
+                            <span className="text-[#1A1A1A]/80 group-hover:text-[#1A1A1A] transition-colors leading-snug">{item}</span>
+                          </label>
+                        ))}
+                      </div>
                     </div>
 
                     <div>
