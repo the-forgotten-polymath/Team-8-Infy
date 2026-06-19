@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { userStoriesData, MoscowPriority, RiskLevel, BusinessValue } from '../../data/userStories';
 
 export default function UserStoriesPage() {
-  
+
   const getMoscowColor = (moscow: MoscowPriority) => {
     switch (moscow) {
       case 'Must have': return 'bg-[#C9540A]/10 text-[#C9540A] border border-[#C9540A]/20';
@@ -37,9 +37,6 @@ export default function UserStoriesPage() {
       <div className="max-w-screen-2xl mx-auto">
         <header className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <Link href="/" className="text-[#C9540A] text-sm font-semibold tracking-wider uppercase hover:underline mb-4 inline-block">
-              ← Back to Ecosystem
-            </Link>
             <h1 className="text-4xl md:text-5xl font-playfair tracking-tight text-[#1A1A1A]">
               User Stories <span className="text-[#C9540A] italic">Matrix</span>
             </h1>
@@ -77,7 +74,7 @@ export default function UserStoriesPage() {
                       {story.story}
                     </td>
                     <td className="p-4 align-top">
-                      <span className={\`inline-flex px-2.5 py-1 rounded-full text-xs font-semibold \${getMoscowColor(story.moscow)}\`}>
+                      <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-semibold ${getMoscowColor(story.moscow)}`}>
                         {story.moscow}
                       </span>
                     </td>
@@ -97,11 +94,11 @@ export default function UserStoriesPage() {
                     </td>
                   </tr>
                 ))}
-              </tbody>
-            </table>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
-    </main>
+    </div>
+    </main >
   );
 }
