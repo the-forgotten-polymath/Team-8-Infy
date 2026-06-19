@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { userStoriesData, MoscowPriority, RiskLevel, BusinessValue, UserStory } from '../../data/userStories';
+import { supabase } from '../../utils/supabase';
 
 type SortField = 'id' | 'priority' | 'moscow' | 'risk' | 'businessValue';
 type SortDirection = 'asc' | 'desc';
@@ -15,6 +16,22 @@ export default function UserStoriesPage() {
   const [sortDir, setSortDir] = useState<SortDirection>('asc');
   const [selectedStory, setSelectedStory] = useState<UserStory | null>(null);
   const [checkedStories, setCheckedStories] = useState<Set<string>>(new Set());
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [hiddenStoriesDB, setHiddenStoriesDB] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    async function fetchHidden() {
+      try {
+        const { data, error } = await supabase.from('hidden_stories').select('story_id');
+        if (!error && data) {
+          setHiddenStoriesDB(new Set(data.map(d => d.story_id)));
+        }
+      } catch (err) {
+        console.error('Error fetching hidden stories:', err);
+      }
+    }
+    fetchHidden();
+  }, []);
 
   const sections = Array.from(new Set(userStoriesData.map((s) => s.section)));
 
@@ -39,10 +56,19 @@ export default function UserStoriesPage() {
 
   const getValueColor = (val: BusinessValue) => {
     switch (val) {
-      case 'High': return 'text-emerald-800 font-medium';
-      case 'Medium': return 'text-amber-800 font-medium';
-      case 'Low': return 'text-[#C9540A] font-medium';
+      case 'High': return 'text-emerald-800 font-bold bg-emerald-100/60 px-2.5 py-1 rounded-md border border-emerald-200';
+      case 'Medium': return 'text-amber-800 font-bold bg-amber-100/60 px-2.5 py-1 rounded-md border border-amber-200';
+      case 'Low': return 'text-[#C9540A] font-bold bg-[#C9540A]/10 px-2.5 py-1 rounded-md border border-[#C9540A]/20';
       default: return 'text-gray-800';
+    }
+  };
+
+  const getBusinessValueText = (val: BusinessValue) => {
+    switch (val) {
+      case 'High': return 'High Impact (Critical)';
+      case 'Medium': return 'Medium Impact (Core)';
+      case 'Low': return 'Low Impact (Minor)';
+      default: return val;
     }
   };
 
@@ -71,6 +97,22 @@ export default function UserStoriesPage() {
       setCheckedStories(new Set());
     } else {
       setCheckedStories(new Set(filteredAndSortedData.map(s => s.id)));
+    }
+  };
+
+  const toggleVisibility = async (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();
+    if (!isAdmin) return;
+    
+    const newSet = new Set(hiddenStoriesDB);
+    if (newSet.has(id)) {
+      newSet.delete(id);
+      setHiddenStoriesDB(newSet);
+      await supabase.from('hidden_stories').delete().eq('story_id', id);
+    } else {
+      newSet.add(id);
+      setHiddenStoriesDB(newSet);
+      await supabase.from('hidden_stories').insert([{ story_id: id }]);
     }
   };
 
@@ -110,6 +152,11 @@ export default function UserStoriesPage() {
   const filteredAndSortedData = useMemo(() => {
     let data = userStoriesData;
 
+    // Filter out hidden stories if not admin
+    if (!isAdmin) {
+      data = data.filter((s) => !hiddenStoriesDB.has(s.id));
+    }
+
     if (activeSection) {
       data = data.filter((s) => s.section === activeSection);
     }
@@ -147,18 +194,34 @@ export default function UserStoriesPage() {
     });
 
     return data;
-  }, [activeSection, moscowFilter, riskFilter, valueFilter, sortField, sortDir]);
+  }, [activeSection, moscowFilter, riskFilter, valueFilter, sortField, sortDir, isAdmin, hiddenStoriesDB]);
 
   return (
     <main className="min-h-screen bg-[#FAF8F5] text-[#1A1A1A] font-sans p-8 md:p-16 relative">
       <div className="max-w-screen-2xl mx-auto">
-        <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-playfair tracking-tight text-[#1A1A1A]">
-            User Stories <span className="text-[#C9540A] italic">Matrix</span>
-          </h1>
-          <p className="mt-2 text-[#1A1A1A]/90 max-w-2xl">
-            Explore {userStoriesData.length} functional requirements across the Retail Digital Twin ecosystem.
-          </p>
+        <header className="mb-12 flex justify-between items-start">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-playfair tracking-tight text-[#1A1A1A]">
+              User Stories <span className="text-[#C9540A] italic">Matrix</span>
+            </h1>
+            <p className="mt-2 text-[#1A1A1A]/90 max-w-2xl">
+              Explore {userStoriesData.length} functional requirements across the Retail Digital Twin ecosystem.
+            </p>
+          </div>
+          <button 
+            onClick={() => {
+              if (isAdmin) {
+                setIsAdmin(false);
+              } else {
+                const pwd = window.prompt('Enter Admin Passcode:');
+                if (pwd === 'admin123') setIsAdmin(true);
+                else if (pwd !== null) alert('Incorrect Passcode');
+              }
+            }}
+            className={`px-4 py-2 text-sm font-bold rounded-md transition-colors border ${isAdmin ? 'bg-[#C9540A] text-white border-[#C9540A]' : 'bg-transparent text-[#1A1A1A]/50 border-[#1A1A1A]/20 hover:border-[#1A1A1A]'}`}
+          >
+            {isAdmin ? 'Exit Admin Mode' : 'Admin Login'}
+          </button>
         </header>
 
         {/* Section Buttons */}
@@ -254,6 +317,7 @@ export default function UserStoriesPage() {
                       className="w-4 h-4 text-[#C9540A] rounded border-[#1A1A1A]/20 focus:ring-[#C9540A] focus:ring-2 accent-[#C9540A] cursor-pointer"
                     />
                   </th>
+                  {isAdmin && <th className="p-4 w-12 text-center" title="Visibility">👁️</th>}
                   <th className="p-4 font-bold whitespace-nowrap">Section</th>
                   <th 
                     className="p-4 font-bold whitespace-nowrap cursor-pointer hover:text-[#C9540A] select-none"
@@ -278,7 +342,7 @@ export default function UserStoriesPage() {
                     className="p-4 font-bold whitespace-nowrap cursor-pointer hover:text-[#C9540A] select-none"
                     onClick={() => handleSort('businessValue')}
                   >
-                    Value {sortField === 'businessValue' && (sortDir === 'asc' ? '↑' : '↓')}
+                    Business Value {sortField === 'businessValue' && (sortDir === 'asc' ? '↑' : '↓')}
                   </th>
                   <th className="p-4 font-bold min-w-[150px]">Interdependency</th>
                   <th 
@@ -304,13 +368,20 @@ export default function UserStoriesPage() {
                         className="w-4 h-4 text-[#C9540A] rounded border-[#1A1A1A]/20 focus:ring-[#C9540A] focus:ring-2 accent-[#C9540A] cursor-pointer"
                       />
                     </td>
-                    <td className="p-4 align-top text-sm font-medium text-[#1A1A1A]">
+                    {isAdmin && (
+                      <td className="p-4 align-top text-center" onClick={(e) => toggleVisibility(e, story.id)}>
+                        <button className={`text-xl transition-transform hover:scale-110 ${hiddenStoriesDB.has(story.id) ? 'opacity-50' : 'opacity-100'}`} title={hiddenStoriesDB.has(story.id) ? "Unhide" : "Hide"}>
+                          {hiddenStoriesDB.has(story.id) ? '🙈' : '👁️'}
+                        </button>
+                      </td>
+                    )}
+                    <td className={`p-4 align-top text-sm font-medium ${isAdmin && hiddenStoriesDB.has(story.id) ? 'text-[#1A1A1A]/40 line-through' : 'text-[#1A1A1A]'}`}>
                       {story.section}
                     </td>
-                    <td className="p-4 align-top text-sm font-mono text-[#1A1A1A]">
+                    <td className={`p-4 align-top text-sm font-mono ${isAdmin && hiddenStoriesDB.has(story.id) ? 'text-[#1A1A1A]/40' : 'text-[#1A1A1A]'}`}>
                       {story.id}
                     </td>
-                    <td className="p-4 align-top text-sm leading-relaxed text-[#1A1A1A]">
+                    <td className={`p-4 align-top text-sm leading-relaxed ${isAdmin && hiddenStoriesDB.has(story.id) ? 'text-[#1A1A1A]/40' : 'text-[#1A1A1A]'}`}>
                       {story.story}
                     </td>
                     <td className="p-4 align-top">
@@ -322,7 +393,7 @@ export default function UserStoriesPage() {
                       <span className={getRiskColor(story.risk)}>{story.risk}</span>
                     </td>
                     <td className="p-4 align-top text-sm">
-                      <span className={getValueColor(story.businessValue)}>{story.businessValue}</span>
+                      <span className={getValueColor(story.businessValue)}>{getBusinessValueText(story.businessValue)}</span>
                     </td>
                     <td className="p-4 align-top text-sm text-[#1A1A1A]/90">
                       {story.interdependency}
