@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
-import { userStoriesData, MoscowPriority, RiskLevel, BusinessValue } from '../../data/userStories';
+import { userStoriesData, MoscowPriority, RiskLevel, BusinessValue, UserStory } from '../../data/userStories';
 
 type SortField = 'id' | 'priority' | 'moscow' | 'risk' | 'businessValue';
 type SortDirection = 'asc' | 'desc';
@@ -13,6 +13,7 @@ export default function UserStoriesPage() {
   const [valueFilter, setValueFilter] = useState<BusinessValue | 'All'>('All');
   const [sortField, setSortField] = useState<SortField>('priority');
   const [sortDir, setSortDir] = useState<SortDirection>('asc');
+  const [selectedStory, setSelectedStory] = useState<UserStory | null>(null);
 
   const sections = Array.from(new Set(userStoriesData.map((s) => s.section)));
 
@@ -52,6 +53,33 @@ export default function UserStoriesPage() {
       setSortDir('asc');
     }
   };
+
+  function generateExplanation(storyObj: UserStory) {
+    const match = storyObj.story.match(/As an? (.*?), I want (?:to )?(.*?)(?: so that | and receive | in order to | and | so )(.*)/i) 
+      || storyObj.story.match(/As an? (.*?), I want (?:to )?(.*)/i);
+    
+    let role = storyObj.section + ' User';
+    let action = storyObj.story;
+    let benefit = 'streamline operations';
+
+    if (match) {
+      role = match[1].trim();
+      action = match[2].trim();
+      if (match[3]) {
+        benefit = match[3].trim();
+      }
+    }
+
+    // Capitalize role
+    role = role.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+    return {
+      translation: `This user story means: The system empowers the ${role} to ${action}. In the luxury retail context, this directly solves pain points to ${benefit}, preventing manual errors.`,
+      scenario: `Imagine a busy day at the boutique or corporate office. A ${role} needs to ${action}. Instead of relying on manual legacy systems, they open the Hutch OS Dashboard. Behind the scenes, the ${storyObj.section} engine analyzes massive amounts of data points to execute this request.`,
+      output: `The OS instantly generates the necessary data and UI, meaning the ${role} successfully achieves their goal to ${benefit}.`,
+      advantage: `In legacy systems, achieving this would require multiple fragmented tools and manual guesswork. With Hutch OS, the AI connects the dots automatically, providing a frictionless experience that empowers the ${role} to focus on luxury client experiences!`
+    };
+  }
 
   const filteredAndSortedData = useMemo(() => {
     let data = userStoriesData;
@@ -96,7 +124,7 @@ export default function UserStoriesPage() {
   }, [activeSection, moscowFilter, riskFilter, valueFilter, sortField, sortDir]);
 
   return (
-    <main className="min-h-screen bg-[#FAF8F5] text-[#1A1A1A] font-sans p-8 md:p-16">
+    <main className="min-h-screen bg-[#FAF8F5] text-[#1A1A1A] font-sans p-8 md:p-16 relative">
       <div className="max-w-screen-2xl mx-auto">
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-playfair tracking-tight text-[#1A1A1A]">
@@ -229,7 +257,11 @@ export default function UserStoriesPage() {
               </thead>
               <tbody className="divide-y divide-[#1A1A1A]/5">
                 {filteredAndSortedData.map((story, index) => (
-                  <tr key={story.id} className="hover:bg-[#FAF8F5] transition-colors group">
+                  <tr 
+                    key={story.id} 
+                    onClick={() => setSelectedStory(story)}
+                    className="hover:bg-[#FAF8F5] transition-colors group cursor-pointer"
+                  >
                     <td className="p-4 align-top text-sm font-medium text-[#1A1A1A]">
                       {story.section}
                     </td>
@@ -272,6 +304,64 @@ export default function UserStoriesPage() {
           </div>
         </div>
       </div>
+
+      {/* Dynamic Overlay Modal */}
+      {selectedStory && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1A1A1A]/60 backdrop-blur-sm" onClick={() => setSelectedStory(null)}>
+          <div className="bg-white rounded-lg shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="sticky top-0 bg-white border-b border-[#1A1A1A]/10 px-8 py-6 flex justify-between items-center z-10">
+              <div>
+                <span className="text-xs font-bold text-[#C9540A] tracking-wider uppercase mb-1 block">{selectedStory.section}</span>
+                <h2 className="text-2xl font-playfair text-[#1A1A1A]">Story {selectedStory.id}</h2>
+              </div>
+              <button onClick={() => setSelectedStory(null)} className="text-[#1A1A1A]/50 hover:text-[#C9540A] text-4xl leading-none">&times;</button>
+            </div>
+            
+            <div className="p-8">
+              <div className="mb-8 p-4 bg-[#FAF8F5] border-l-4 border-[#1A1A1A] rounded-r-md">
+                <p className="text-lg text-[#1A1A1A] font-medium italic">"{selectedStory.story}"</p>
+              </div>
+
+              {(() => {
+                const expl = generateExplanation(selectedStory);
+                return (
+                  <div className="space-y-8">
+                    <div>
+                      <h3 className="text-sm uppercase tracking-widest font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
+                        <span className="text-xl">📖</span> The Translation
+                      </h3>
+                      <p className="text-[#1A1A1A]/90 leading-relaxed">{expl.translation}</p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm uppercase tracking-widest font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
+                        <span className="text-xl">🌟</span> Real-World Scenario
+                      </h3>
+                      <p className="text-[#1A1A1A]/90 leading-relaxed">{expl.scenario}</p>
+                    </div>
+
+                    <div className="bg-[#1A1A1A] text-white p-6 rounded-md shadow-md border-l-4 border-[#C9540A]">
+                      <h3 className="text-sm uppercase tracking-widest font-bold text-[#C9540A] mb-3">
+                        The Output
+                      </h3>
+                      <p className="text-white/90 leading-relaxed font-playfair italic text-lg">
+                        "{expl.output}"
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-sm uppercase tracking-widest font-bold text-[#1A1A1A] mb-3 flex items-center gap-2">
+                        <span className="text-xl">🚀</span> Why This is Different
+                      </h3>
+                      <p className="text-[#1A1A1A]/90 leading-relaxed">{expl.advantage}</p>
+                    </div>
+                  </div>
+                );
+              })()}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
