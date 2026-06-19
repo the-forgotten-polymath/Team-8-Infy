@@ -29,18 +29,18 @@ export default function UserStoriesPage() {
   const getRiskColor = (risk: RiskLevel) => {
     switch (risk) {
       case 'High': return 'text-[#C9540A] font-medium';
-      case 'Medium': return 'text-amber-600 font-medium';
-      case 'Low': return 'text-emerald-600 font-medium';
-      default: return 'text-gray-600';
+      case 'Medium': return 'text-amber-800 font-medium';
+      case 'Low': return 'text-emerald-800 font-medium';
+      default: return 'text-gray-800';
     }
   };
 
   const getValueColor = (val: BusinessValue) => {
     switch (val) {
-      case 'High': return 'text-emerald-600 font-medium';
-      case 'Medium': return 'text-amber-600 font-medium';
+      case 'High': return 'text-emerald-800 font-medium';
+      case 'Medium': return 'text-amber-800 font-medium';
       case 'Low': return 'text-[#C9540A] font-medium';
-      default: return 'text-gray-600';
+      default: return 'text-gray-800';
     }
   };
 
@@ -102,7 +102,7 @@ export default function UserStoriesPage() {
           <h1 className="text-4xl md:text-5xl font-playfair tracking-tight text-[#1A1A1A]">
             User Stories <span className="text-[#C9540A] italic">Matrix</span>
           </h1>
-          <p className="mt-2 text-[#1A1A1A]/70 max-w-2xl">
+          <p className="mt-2 text-[#1A1A1A]/90 max-w-2xl">
             Explore {userStoriesData.length} functional requirements across the Retail Digital Twin ecosystem.
           </p>
         </header>
@@ -114,7 +114,7 @@ export default function UserStoriesPage() {
             className={`px-6 py-3 rounded-full text-sm font-semibold transition-all \${
               activeSection === null 
               ? 'bg-[#1A1A1A] text-[#FAF8F5] shadow-lg scale-105' 
-              : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/70 hover:border-[#C9540A] hover:text-[#C9540A]'
+              : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/90 hover:border-[#C9540A] hover:text-[#C9540A]'
             }`}
           >
             All Sections
@@ -126,7 +126,7 @@ export default function UserStoriesPage() {
               className={`px-6 py-3 rounded-full text-sm font-semibold transition-all \${
                 activeSection === section 
                 ? 'bg-[#C9540A] text-white shadow-lg scale-105' 
-                : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/70 hover:border-[#C9540A] hover:text-[#C9540A]'
+                : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/90 hover:border-[#C9540A] hover:text-[#C9540A]'
               }`}
             >
               {section}
@@ -137,7 +137,7 @@ export default function UserStoriesPage() {
         {/* Filters and Sorting */}
         <div className="mb-6 p-4 bg-white border border-[#1A1A1A]/10 rounded-sm flex flex-wrap items-center gap-6 shadow-sm">
           <div className="flex flex-col gap-1">
-            <label className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]/50">MoSCoW</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">MoSCoW</label>
             <select 
               value={moscowFilter} 
               onChange={(e) => setMoscowFilter(e.target.value as any)}
@@ -152,7 +152,7 @@ export default function UserStoriesPage() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]/50">Risk Level</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">Risk Level</label>
             <select 
               value={riskFilter} 
               onChange={(e) => setRiskFilter(e.target.value as any)}
@@ -166,7 +166,7 @@ export default function UserStoriesPage() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]/50">Business Value</label>
+            <label className="text-xs font-bold uppercase tracking-wider text-[#1A1A1A]">Business Value</label>
             <select 
               value={valueFilter} 
               onChange={(e) => setValueFilter(e.target.value as any)}
@@ -181,7 +181,7 @@ export default function UserStoriesPage() {
 
           <div className="flex-1"></div>
           
-          <div className="text-sm font-medium text-[#1A1A1A]/60 bg-[#FAF8F5] px-4 py-2 rounded-md border border-[#1A1A1A]/10">
+          <div className="text-sm font-medium text-[#1A1A1A] bg-[#FAF8F5] px-4 py-2 rounded-md border border-[#1A1A1A]/10">
             Showing <span className="text-[#C9540A] font-bold">{filteredAndSortedData.length}</span> stories
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function UserStoriesPage() {
           <div className="overflow-x-auto max-h-[70vh] relative">
             <table className="w-full text-left border-collapse">
               <thead className="sticky top-0 bg-[#f4f2ef] shadow-sm z-10">
-                <tr className="border-b border-[#1A1A1A]/10 text-xs tracking-wider uppercase text-[#1A1A1A]/80">
+                <tr className="border-b border-[#1A1A1A]/10 text-xs tracking-wider uppercase text-[#1A1A1A]">
                   <th className="p-4 font-bold whitespace-nowrap">Section</th>
                   <th 
                     className="p-4 font-bold whitespace-nowrap cursor-pointer hover:text-[#C9540A] select-none"
@@ -230,10 +230,10 @@ export default function UserStoriesPage() {
               <tbody className="divide-y divide-[#1A1A1A]/5">
                 {filteredAndSortedData.map((story) => (
                   <tr key={story.id} className="hover:bg-[#FAF8F5] transition-colors group">
-                    <td className="p-4 align-top text-sm font-medium text-[#1A1A1A]/80">
+                    <td className="p-4 align-top text-sm font-medium text-[#1A1A1A]">
                       {story.section}
                     </td>
-                    <td className="p-4 align-top text-sm font-mono text-[#1A1A1A]/60">
+                    <td className="p-4 align-top text-sm font-mono text-[#1A1A1A]">
                       {story.id}
                     </td>
                     <td className="p-4 align-top text-sm leading-relaxed text-[#1A1A1A]">
@@ -250,7 +250,7 @@ export default function UserStoriesPage() {
                     <td className="p-4 align-top text-sm">
                       <span className={getValueColor(story.businessValue)}>{story.businessValue}</span>
                     </td>
-                    <td className="p-4 align-top text-sm text-[#1A1A1A]/70">
+                    <td className="p-4 align-top text-sm text-[#1A1A1A]/90">
                       {story.interdependency}
                     </td>
                     <td className="p-4 align-top text-center">
@@ -262,7 +262,7 @@ export default function UserStoriesPage() {
                 ))}
                 {filteredAndSortedData.length === 0 && (
                   <tr>
-                    <td colSpan={8} className="p-12 text-center text-[#1A1A1A]/50 italic">
+                    <td colSpan={8} className="p-12 text-center text-[#1A1A1A] italic">
                       No user stories match the selected filters.
                     </td>
                   </tr>

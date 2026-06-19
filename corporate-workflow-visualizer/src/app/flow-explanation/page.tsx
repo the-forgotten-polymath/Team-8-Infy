@@ -90,7 +90,7 @@ export default function FlowExplanationPage() {
           <h1 className="text-4xl md:text-5xl font-playfair tracking-tight text-[#1A1A1A]">
             Flow Explanations <span className="text-[#C9540A] italic">& Differentiators</span>
           </h1>
-          <p className="mt-4 text-[#1A1A1A]/70 max-w-3xl text-lg">
+          <p className="mt-4 text-[#1A1A1A]/90 max-w-3xl text-lg">
             Understand how each module works in plain language, and discover exactly how the Hutch ecosystem outpaces legacy retail solutions.
           </p>
         </header>
@@ -105,7 +105,7 @@ export default function FlowExplanationPage() {
                 className={`text-left px-6 py-4 rounded-md text-sm font-bold tracking-wide transition-all \${
                   activeSection.section === data.section 
                   ? 'bg-[#C9540A] text-white shadow-md scale-[1.02]' 
-                  : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/70 hover:border-[#C9540A] hover:text-[#C9540A]'
+                  : 'bg-white border border-[#1A1A1A]/10 text-[#1A1A1A]/90 hover:border-[#C9540A] hover:text-[#C9540A]'
                 }`}
               >
                 {data.section}
@@ -129,7 +129,7 @@ export default function FlowExplanationPage() {
                     <div className="w-8 h-8 shrink-0 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center font-bold text-sm">
                       {idx + 1}
                     </div>
-                    <p className="text-[#1A1A1A]/80 leading-relaxed mt-1">
+                    <p className="text-[#1A1A1A] leading-relaxed mt-1">
                       {step.substring(3)}
                     </p>
                   </div>
@@ -147,7 +147,7 @@ export default function FlowExplanationPage() {
                   return (
                     <div key={idx}>
                       <strong className="text-[#1A1A1A] block mb-1">{title}</strong>
-                      <p className="text-[#1A1A1A]/70 leading-relaxed">{desc}</p>
+                      <p className="text-[#1A1A1A]/90 leading-relaxed">{desc}</p>
                     </div>
                   );
                 })}
