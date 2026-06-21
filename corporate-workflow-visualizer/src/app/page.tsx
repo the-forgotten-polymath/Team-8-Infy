@@ -17,13 +17,21 @@ export default function EntryPage() {
           Retail Store Management System
         </p>
 
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+        <div className="flex flex-col md:flex-row flex-wrap gap-6 justify-center items-center">
           <Link 
             href="/workflow"
             className="group relative px-8 py-4 bg-[#1A1A1A] text-[#FAF8F5] overflow-hidden rounded-sm transition-all hover:scale-105 active:scale-95 flex items-center justify-center w-64 shadow-xl"
           >
             <div className="absolute inset-0 w-full h-full bg-[#C9540A] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
             <span className="relative font-medium tracking-wide uppercase text-sm">Interactive Workflow</span>
+          </Link>
+
+          <Link 
+            href="/prd"
+            className="group relative px-8 py-4 bg-[#1A1A1A] text-[#FAF8F5] overflow-hidden rounded-sm transition-all hover:scale-105 active:scale-95 flex items-center justify-center w-64 shadow-xl"
+          >
+            <div className="absolute inset-0 w-full h-full bg-[#C9540A] translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+            <span className="relative font-medium tracking-wide uppercase text-sm">PRD Document</span>
           </Link>
 
           <Link 

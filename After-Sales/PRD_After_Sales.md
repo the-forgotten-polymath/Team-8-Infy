@@ -29,7 +29,7 @@
 4. [User Personas & Roles](#4-user-personas--roles)
 5. [Information Architecture & Navigation](#5-information-architecture--navigation)
 6. [Epic E1 — Smart Intake & Diagnostics](#6-epic-e1--smart-intake--diagnostics)
-7. [Epic E2 — Repair Workflow Engine](#7-epic-e2--repair-workflow-engine)
+7. [Epic E2 — Repair Workflow Engine](#7-epic-e2--3repair-workflow-engine)
 8. [Epic E3 — Customer Experience Portal](#8-epic-e3--customer-experience-portal)
 9. [Epic E4 — Warranty & Authentication Center](#9-epic-e4--warranty--authentication-center)
 10. [Epic E5 — Return & Logistics Management](#10-epic-e5--return--logistics-management)
