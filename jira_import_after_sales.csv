@@ -1,0 +1,193 @@
+Issue Type,Summary,Epic Link,Description,Priority,Story Points
+Story,"[AS-US01] As an After-Sales Specialist, I want to create a new After-Sales Ticket by searching or scanning the customer profile so that the repair request is linked to the correct client record.",After-Sales Specialist/E1 — Smart Intake & Diagnostics,"*Acceptance Criteria:*
+Customer can be searched by name, phone, email, or client ID; selected customer details auto-fill in the AST; VIP/client tier is visible; AST cannot be created without a linked customer or approved guest profile.
+
+*Business Value:*
+Reduces manual entry, prevents wrong customer mapping, and gives the specialist full client context from the beginning.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,"[AS-US02] As an After-Sales Specialist, I want to identify the product using serial number, barcode, or Product Digital Twin lookup so that I can load product details automatically.",After-Sales Specialist/E1 — Smart Intake & Diagnostics,"*Acceptance Criteria:*
+Product can be searched/scanned by serial number or barcode; system loads product name, SKU, purchase date, warranty status, and previous service history; invalid serial shows a clear error; manual fallback is available with approval.
+
+*Business Value:*
+Ensures the repair is linked to the correct luxury item and avoids duplicate or incorrect service records.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US03] As an After-Sales Specialist, I want to capture multiple condition photos during intake so that the item’s physical state is documented before repair starts.",After-Sales Specialist/E1 — Smart Intake & Diagnostics,"*Acceptance Criteria:*
+Minimum 2 photos are required before AST submission; photos are timestamped and linked to the ticket; user can tag photo angle/type; photos are visible in the ticket detail and Product Digital Twin timeline.
+
+*Business Value:*
+Prevents disputes by creating visual proof of the item’s condition at intake.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,"[AS-US04] As an After-Sales Specialist, I want AI-assisted condition analysis to detect scratches, cracks, discoloration, dents, or missing parts so that diagnostics are faster and more consistent.",After-Sales Specialist/E1 — Smart Intake & Diagnostics,"*Acceptance Criteria:*
+AI analysis runs on captured photos; detected issues are shown with confidence score and severity; specialist can accept, edit, or reject AI findings; final condition report is saved to the AST.
+
+*Business Value:*
+Improves diagnostic consistency and gives the product a premium, intelligent service experience.
+
+*MoSCoW:*
+Should Have",High,13
+Story,"[AS-US05] As an After-Sales Specialist, I want to validate warranty status during intake so that I can determine whether the service is covered, chargeable, or needs manager review.",After-Sales Specialist/E1 — Smart Intake & Diagnostics,"*Acceptance Criteria:*
+Warranty status is shown as Active, Expired, Extended, or Void; warranty expiry date is visible; system indicates covered/not covered; exceptions can be escalated for approval.
+
+*Business Value:*
+Prevents incorrect repair charges and improves customer trust during service intake.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US06] As an After-Sales Specialist, I want to add diagnostic notes, issue category, severity, and priority so that the repair team has complete service context.",After-Sales Specialist/E1 — Smart Intake & Diagnostics,"*Acceptance Criteria:*
+Issue category and severity are mandatory; notes support text and voice-to-text input; priority can be Normal, High, or Urgent; SLA deadline is calculated based on service type and priority.
+
+*Business Value:*
+Improves repair planning and ensures the right urgency is assigned to every service case.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,"[AS-US07] As an After-Sales Specialist, I want the system to generate a unique human-readable AST number so that every repair can be easily tracked by staff and customers.",After-Sales Specialist/E2 — Repair Workflow Engine,"*Acceptance Criteria:*
+Ticket number follows format such as AST-YYYY-STORE-NNNNN; duplicate ticket numbers are not allowed; ticket number appears on all repair documents, notifications, and customer portal links.
+
+*Business Value:*
+Makes repair tracking simple, professional, and consistent across stores.
+
+*MoSCoW:*
+Must Have",Highest,3
+Story,"[AS-US08] As an After-Sales Specialist, I want to create an itemized repair estimate with labor, parts, tax, and expected completion date so that the customer can clearly understand the repair cost.",After-Sales Specialist/E2 — Repair Workflow Engine,"*Acceptance Criteria:*
+Estimate includes labor, parts, tax, discount if applicable, total cost, and expected completion date; total is auto-calculated; estimate can be previewed before sending; estimate is linked to the AST.
+
+*Business Value:*
+Makes repair pricing transparent and reduces back-and-forth communication.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US09] As an After-Sales Specialist, I want to send repair estimates for customer approval so that repair work begins only after the customer accepts the cost and scope.",After-Sales Specialist/E2 — Repair Workflow Engine,"*Acceptance Criteria:*
+Estimate can be sent through secure link, email, SMS, or app notification; approval status updates to Pending, Approved, Rejected, or Expired; repair cannot proceed to chargeable work without approval.
+
+*Business Value:*
+Protects the business from disputes and gives customers control over repair decisions.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US10] As an After-Sales Specialist, I want to allocate required parts from inventory so that the repair can proceed only when parts are available or reserved.",After-Sales Specialist/E2 — Repair Workflow Engine,"*Acceptance Criteria:*
+Required parts can be searched and added; system shows availability, quantity, and location; unavailable parts trigger backorder or transfer request; allocated parts are reserved against the AST.
+
+*Business Value:*
+Reduces repair delays caused by missing parts and connects After-Sales with Inventory.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US11] As an After-Sales Specialist, I want to update repair stages such as inspection, estimate, approval, parts allocation, repair started, repair completed, QA, and ready for pickup so that everyone knows the exact repair status.",After-Sales Specialist/E2 — Repair Workflow Engine,"*Acceptance Criteria:*
+Repair stage follows a controlled sequence; each stage update records timestamp and staff ID; skipped critical stages are blocked; stage history is visible in timeline view.
+
+*Business Value:*
+Gives complete operational visibility and prevents uncontrolled repair handling.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US12] As an After-Sales Specialist, I want to complete a mandatory QA checklist before closing the repair so that quality is verified before the item is returned.",After-Sales Specialist/E2 — Repair Workflow Engine,"*Acceptance Criteria:*
+QA checklist must be fully completed before marking repair complete; failed QA sends ticket back to repair stage; QA result includes inspector, timestamp, notes, and after-repair photos.
+
+*Business Value:*
+Protects luxury service quality and reduces repeat repairs or customer complaints.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US13] As an After-Sales Specialist, I want automated customer notifications for major repair milestones so that customers stay informed without manual calls.","After-Sales Specialist/E3 — Customer Communication, Approval & Payment","*Acceptance Criteria:*
+Customer receives notifications for ticket created, estimate ready, approval received, repair started, repair completed, QA passed, and ready for pickup; communication log is saved in AST; failed notifications are flagged.
+
+*Business Value:*
+Improves customer experience and reduces manual follow-up workload.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US14] As an After-Sales Specialist, I want customers to approve estimates and make payments through a secure digital gateway so that service approval and payment collection are frictionless.","After-Sales Specialist/E3 — Customer Communication, Approval & Payment","*Acceptance Criteria:*
+Customer can approve/reject estimate from secure link; approved paid repairs update ticket automatically; payment status is captured as Pending, Paid, Failed, or Refunded; receipt is generated after payment.
+
+*Business Value:*
+Speeds up approvals, improves cash collection, and gives the service journey a premium digital experience.
+
+*MoSCoW:*
+Must Have",Highest,13
+Story,"[AS-US15] As an After-Sales Specialist, I want to maintain a communication log for every customer interaction so that the complete service conversation is auditable.","After-Sales Specialist/E3 — Customer Communication, Approval & Payment","*Acceptance Criteria:*
+System records sent notifications, customer replies, staff notes, approval actions, and payment events; entries show timestamp and user/source; communication history cannot be deleted by normal users.
+
+*Business Value:*
+Creates accountability and prevents confusion between staff, customer, and service center.
+
+*MoSCoW:*
+Should Have",High,5
+Story,"[AS-US16] As an After-Sales Specialist, I want to look up active warranty records and extend warranty after eligible repairs so that product coverage remains accurate.","After-Sales Specialist/E4 — Warranty, Authentication & Valuation Center","*Acceptance Criteria:*
+Warranty lookup returns current coverage, expiry, terms, and previous claims; eligible repairs can trigger warranty extension; warranty update writes back to Product Digital Twin.
+
+*Business Value:*
+Maintains accurate warranty history and strengthens long-term customer trust.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US17] As an After-Sales Specialist, I want to create authentication requests for luxury items so that suspicious, resale, or high-value items can be officially verified.","After-Sales Specialist/E4 — Warranty, Authentication & Valuation Center","*Acceptance Criteria:*
+Authentication request includes product details, serial number, photos, COA if available, and reason; request has statuses Submitted, Under Review, Approved, Rejected; final certificate/result is linked to Product Digital Twin.
+
+*Business Value:*
+Protects the brand and gives customers confidence in product authenticity.
+
+*MoSCoW:*
+Should Have",High,8
+Story,"[AS-US18] As an After-Sales Specialist, I want to request or generate valuation letters so that customers can use official product value documentation for insurance or resale support.","After-Sales Specialist/E4 — Warranty, Authentication & Valuation Center","*Acceptance Criteria:*
+Valuation request includes product identity, condition report, service history, and photos; valuation letter can be previewed/exported; final letter is attached to AST and Product Digital Twin.
+
+*Business Value:*
+Adds premium after-sales value beyond repairs and supports luxury ownership needs.
+
+*MoSCoW:*
+Should Have",High,8
+Story,"[AS-US19] As an After-Sales Specialist, I want to schedule client pickup or delivery after QA approval so that the item is returned through a controlled process.",After-Sales Specialist/E5 — Return & Logistics Management,"*Acceptance Criteria:*
+Pickup/delivery can be scheduled only after QA pass; customer receives pickup notification; pickup slot, return method, staff ID, and customer confirmation are recorded; missed pickup can be rescheduled.
+
+*Business Value:*
+Ensures the final handover is smooth, traceable, and customer-friendly.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,"[AS-US20] As an After-Sales Specialist, I want to generate return packaging documents and track outbound shipments for completed repairs so that shipped items are protected and traceable.",After-Sales Specialist/E5 — Return & Logistics Management,"*Acceptance Criteria:*
+System generates packaging checklist, return label, and shipment reference; shipment status is tracked as Packed, Shipped, In Transit, Delivered, or Exception; delivery completion closes logistics step.
+
+*Business Value:*
+Reduces lost-item risk and ensures luxury items are returned safely with proper documentation.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,"[AS-US21] As an After-Sales Specialist, I want to see my active repair queue with SLA status, assigned technician, stage, and priority so that I can focus on urgent service cases first.",After-Sales Specialist/E6 — Service Intelligence Dashboard,"*Acceptance Criteria:*
+Dashboard lists active ASTs; tickets can be filtered by status, SLA risk, priority, and technician; overdue or near-breach cases are highlighted; tapping a case opens ticket detail.
+
+*Business Value:*
+Helps specialists manage workload and prevent SLA breaches.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,"[AS-US22] As an After-Sales Specialist, I want AI-powered SLA breach risk and bottleneck alerts so that I can act before repairs become delayed.",After-Sales Specialist/E6 — Service Intelligence Dashboard,"*Acceptance Criteria:*
+System flags tickets at SLA risk; alert explains reason such as pending approval, unavailable parts, QA delay, or service center delay; specialist can trigger escalation or next action from the alert.
+
+*Business Value:*
+Makes the service team proactive instead of reactive and protects customer satisfaction.
+
+*MoSCoW:*
+Should Have",High,13
+Story,"[AS-US23] As an After-Sales Specialist, I want to view service analytics such as average repair time, QA failure rate, repeat repair rate, and most common issues so that I can improve repair quality.",After-Sales Specialist/E6 — Service Intelligence Dashboard,"*Acceptance Criteria:*
+Dashboard shows average repair time, QA failure rate, repeat repair rate, top issue categories, and completed repairs; filters work by date, category, store, and technician; report can be exported.
+
+*Business Value:*
+Helps the team identify recurring quality problems and improve service operations.
+
+*MoSCoW:*
+Should Have",High,8
+Story,"[AS-US24] As an After-Sales Specialist, I want every repair event to be appended to the Product Digital Twin so that the item has a permanent service history.",After-Sales Specialist/E2 — Repair Workflow Engine,"*Acceptance Criteria:*
+AST creation, diagnostics, estimate approval, parts allocation, repair completion, QA result, warranty update, authentication, valuation, and return events are added to the Product Digital Twin timeline; timeline remains chronological and auditable.
+
+*Business Value:*
+Creates a complete luxury service passport and connects After-Sales with Inventory, Sales, and Corporate visibility.
+
+*MoSCoW:*
+Must Have",Highest,13
