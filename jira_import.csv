@@ -1,0 +1,281 @@
+Issue Type,Summary,Epic Link,Description,Priority,Story Points
+Story,[INV-US01] As an Inventory Manager,Inventory Controller/I6 — Inventory Intelligence Dashboard & Predictive Replenishment,"*Epic:*
+Inventory Controller/I6 — Inventory Intelligence Dashboard & Predictive Replenishment
+
+*User Story:*
+As an Inventory Manager, I want to see a real-time inventory dashboard showing total stock, low-stock alerts, pending transfers, open variances, and shrink risk so that I can control store inventory from one screen.
+
+*Acceptance Criteria:*
+Dashboard shows total stock, low-stock alerts, pending transfers, open variances, and shrink risk; data refreshes automatically; user can tap each card to open detailed view; dashboard supports offline cached view.
+
+*Business Value:*
+Gives the inventory team one control center instead of checking multiple screens, improving speed and operational visibility.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,[INV-US02] As an Inventory Manager,Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation,"*Epic:*
+Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation
+
+*User Story:*
+As an Inventory Manager, I want to scan multiple product barcodes in a single camera frame using iPhone/iPad Vision scanning so that cycle counts and stock checks are faster without requiring external hardware.
+
+*Acceptance Criteria:*
+Camera detects multiple barcodes in one frame; detected items are shown with confidence status; duplicate scans are ignored; scanned items are added to the count session instantly.
+
+*Business Value:*
+Reduces manual scanning time and makes the solution practical without depending only on RFID hardware.
+
+*MoSCoW:*
+Must Have",Highest,13
+Story,[INV-US03] As an Inventory Manager,Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation,"*Epic:*
+Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation
+
+*User Story:*
+As an Inventory Manager, I want to verify high-value products using RFID/NFC where available so that item-level authenticity and physical presence can be confirmed accurately.
+
+*Acceptance Criteria:*
+RFID/NFC scan reads tag data; scanned tag maps to the correct product record; unsupported devices show barcode fallback; failed scans display clear retry/error message.
+
+*Business Value:*
+Adds enterprise-grade luxury asset verification while still keeping barcode/Vision as the primary fallback.
+
+*MoSCoW:*
+Should Have",High,8
+Story,[INV-US04] As an Inventory Manager,Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation,"*Epic:*
+Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation
+
+*User Story:*
+As an Inventory Manager, I want the system to automatically compare scanned physical stock with system inventory so that missing, extra, duplicate, and wrong-location items are instantly flagged.
+
+*Acceptance Criteria:*
+System compares scanned items with expected stock; missing, extra, duplicate, and wrong-location items are categorized separately; each exception has item details and value; user can mark exceptions for investigation.
+
+*Business Value:*
+Prevents inventory mismatches from being discovered late and improves stock accuracy.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US05] As an Inventory Manager,Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation,"*Epic:*
+Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation
+
+*User Story:*
+As an Inventory Manager, I want to view shrink analytics after every scan session so that I can identify loss patterns, suspicious locations, and high-risk items early.
+
+*Acceptance Criteria:*
+Shrink report shows missing item count, estimated value, category, zone, and risk level; repeated shrink patterns are highlighted; manager can create investigation case from report.
+
+*Business Value:*
+Helps reduce financial loss by moving shrink control from reactive to proactive.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US06] As an Inventory Manager,Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation,"*Epic:*
+Inventory Controller/I1 — Vision Inventory Capture & Stock Reconciliation
+
+*User Story:*
+As an Inventory Manager, I want to generate an Inventory Validation Report after every stock scan so that there is a clear audit record of expected stock, scanned stock, and discrepancies.
+
+*Acceptance Criteria:*
+Report includes expected items, scanned items, matched items, exceptions, timestamp, staff ID, store zone, and device ID; report can be exported as PDF/CSV; report is saved in audit history.
+
+*Business Value:*
+Creates a reliable audit trail for compliance, internal review, and management signoff.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,[INV-US07] As an Inventory Manager,"Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine","*Epic:*
+Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine
+
+*User Story:*
+As an Inventory Manager, I want incoming shipments to be automatically matched against the ASN so that receiving errors, missing items, damaged items, and extra items are detected without manual reconciliation.
+
+*Acceptance Criteria:*
+User can open shipment by ASN number; system compares expected vs received items; discrepancies are automatically flagged; match result shows received, missing, damaged, and extra items.
+
+*Business Value:*
+Speeds up receiving and reduces human error during shipment reconciliation.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US08] As an Inventory Manager,"Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine","*Epic:*
+Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine
+
+*User Story:*
+As an Inventory Manager, I want to capture photos of received products, damaged packaging, or shipment discrepancies so that supplier disputes and internal investigations have visual proof.
+
+*Acceptance Criteria:*
+User can attach photos to shipment, item, or discrepancy; photos include timestamp and linked staff ID; damaged items require at least one photo before case submission.
+
+*Business Value:*
+Provides evidence for supplier claims, insurance, and internal accountability.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,[INV-US09] As an Inventory Manager,Inventory Controller/I4 — Product Authentication & Serialization,"*Epic:*
+Inventory Controller/I4 — Product Authentication & Serialization
+
+*User Story:*
+As an Inventory Manager, I want every received high-value product to automatically create a Product Digital Twin so that its lifecycle, provenance, ownership, movement, warranty, and service history are tracked from day one.
+
+*Acceptance Criteria:*
+Product Digital Twin is created after successful receiving; twin stores SKU, serial number, brand, category, location, status, and creation event; duplicate twins are prevented by serial validation.
+
+*Business Value:*
+Creates the foundation of the whole luxury retail platform by giving every item a permanent digital identity.
+
+*MoSCoW:*
+Must Have",Highest,13
+Story,[INV-US10] As an Inventory Manager,Inventory Controller/I4 — Product Authentication & Serialization,"*Epic:*
+Inventory Controller/I4 — Product Authentication & Serialization
+
+*User Story:*
+As an Inventory Manager, I want to capture and validate product serial numbers during receiving so that luxury items can be uniquely identified, authenticated, and traced across the system.
+
+*Acceptance Criteria:*
+Serial number is mandatory for configured high-value categories; invalid or duplicate serial numbers are blocked; serial is linked to Product Digital Twin; user can scan or manually enter serial.
+
+*Business Value:*
+Protects provenance, warranty, resale value, and authenticity of luxury goods.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,[INV-US11] As an Inventory Manager,Inventory Controller/I4 — Product Authentication & Serialization,"*Epic:*
+Inventory Controller/I4 — Product Authentication & Serialization
+
+*User Story:*
+As an Inventory Manager, I want to generate and link Certificates of Authenticity to the Product Digital Twin so that each luxury item has verified digital proof of authenticity.
+
+*Acceptance Criteria:*
+COA can be generated after serial validation; COA includes product details, serial number, issue date, store, and QR/code reference; COA is linked to the Product Digital Twin and can be printed/exported.
+
+*Business Value:*
+Strengthens trust, brand protection, and luxury authenticity experience.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US12] As an Inventory Manager,"Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine","*Epic:*
+Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine
+
+*User Story:*
+As an Inventory Manager, I want to assign received products to specific store zones, shelves, vaults, or display areas so that physical location always matches system records.
+
+*Acceptance Criteria:*
+User can assign item to zone/shelf/vault/display; location update creates movement event; wrong-location scan later triggers exception; location history is visible in Product Digital Twin.
+
+*Business Value:*
+Improves item findability and reduces misplaced stock issues.
+
+*MoSCoW:*
+Must Have",Highest,5
+Story,[INV-US13] As an Inventory Manager,"Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine","*Epic:*
+Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine
+
+*User Story:*
+As an Inventory Manager, I want to create and track inter-store transfers with source store, destination store, items, status, and expected delivery date so that stock movement is controlled and visible.
+
+*Acceptance Criteria:*
+User can create transfer request; transfer includes selected items, source, destination, expected date, and reason; transfer has statuses such as Created, Approved, Packed, In Transit, Received, Exception, Completed.
+
+*Business Value:*
+Enables controlled stock movement across boutiques and supports endless aisle fulfillment.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US14] As an Inventory Manager,"Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine","*Epic:*
+Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine
+
+*User Story:*
+As an Inventory Manager, I want the receiving store to scan and confirm transferred items so that every transfer has a complete chain of custody and discrepancy record.
+
+*Acceptance Criteria:*
+Receiving store scans transferred items; system compares received items with transfer manifest; missing/damaged/extra items create exceptions; chain-of-custody event is added to each Product Digital Twin.
+
+*Business Value:*
+Prevents transfer disputes and ensures accountability between stores.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US15] As an Inventory Manager,"Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine","*Epic:*
+Inventory Controller/I2 — Smart Receiving, ASN & Transfer Engine
+
+*User Story:*
+As an Inventory Manager, I want to create vendor return requests with reason codes, item details, supporting photos, and shipment tracking so that defective or incorrect items can be returned properly.
+
+*Acceptance Criteria:*
+Vendor return can be created from received item or inventory item; reason code and photos are required; return shipment status is tracked; returned item status updates in inventory.
+
+*Business Value:*
+Makes supplier returns structured, traceable, and less dependent on emails or manual notes.
+
+*MoSCoW:*
+Should Have",High,5
+Story,[INV-US16] As an Inventory Manager,"Inventory Controller/I3 — Cycle Count, Variance & Audit Control","*Epic:*
+Inventory Controller/I3 — Cycle Count, Variance & Audit Control
+
+*User Story:*
+As an Inventory Manager, I want to schedule regular cycle counts by store zone, product category, or risk level so that inventory accuracy is maintained continuously instead of only during annual audits.
+
+*Acceptance Criteria:*
+User can create daily, weekly, or monthly count schedules; schedules can target zone/category/risk level; upcoming counts appear on dashboard; missed counts trigger alert.
+
+*Business Value:*
+Keeps inventory accuracy high through continuous control rather than one-time audits.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US17] As an Inventory Manager,"Inventory Controller/I3 — Cycle Count, Variance & Audit Control","*Epic:*
+Inventory Controller/I3 — Cycle Count, Variance & Audit Control
+
+*User Story:*
+As an Inventory Manager, I want all inventory variances to require reason codes, investigation notes, and manager signoff so that stock adjustments are controlled, auditable, and compliant.
+
+*Acceptance Criteria:*
+Variance cannot be closed without reason code; high-value variance requires manager approval; approval records timestamp, approver, notes, and decision; rejected variance returns to investigation.
+
+*Business Value:*
+Prevents unauthorized stock adjustments and improves compliance.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US18] As an Inventory Manager,"Inventory Controller/I3 — Cycle Count, Variance & Audit Control","*Epic:*
+Inventory Controller/I3 — Cycle Count, Variance & Audit Control
+
+*User Story:*
+As an Inventory Manager, I want the system to create shrink investigation cases showing last scan, last location, last handler, item value, and risk score so that losses can be investigated quickly.
+
+*Acceptance Criteria:*
+User can create investigation from missing item or shrink alert; case shows last scan, last known location, last staff handler, item value, and risk score; case has statuses Open, Investigating, Resolved, Escalated.
+
+*Business Value:*
+Saves investigation time and helps protect high-value inventory from theft, damage, or process failure.
+
+*MoSCoW:*
+Should Have",High,8
+Story,[INV-US19] As an Inventory Manager,Inventory Controller/I5 — Service Logistics & Loaner Tracking,"*Epic:*
+Inventory Controller/I5 — Service Logistics & Loaner Tracking
+
+*User Story:*
+As an Inventory Manager, I want to track items sent to service centers and manage loaner inventory linked to After-Sales Tickets so that repair logistics and customer loaners are never lost or delayed.
+
+*Acceptance Criteria:*
+User can link service shipment to AST; outbound and inbound statuses are tracked; loaner item can be issued and returned; loaner and service events are added to Product Digital Twin.
+
+*Business Value:*
+Connects Inventory and After-Sales, reducing service delays and lost loaner risk.
+
+*MoSCoW:*
+Must Have",Highest,8
+Story,[INV-US20] As an Inventory Manager,Inventory Controller/I6 — Inventory Intelligence Dashboard & Predictive Replenishment,"*Epic:*
+Inventory Controller/I6 — Inventory Intelligence Dashboard & Predictive Replenishment
+
+*User Story:*
+As an Inventory Manager, I want AI-powered stockout risk, overstock alerts, and replenishment suggestions so that the store can prevent lost sales and optimize inventory allocation.
+
+*Acceptance Criteria:*
+System shows stockout risk by SKU/category; overstock items are flagged; replenishment suggestion includes recommended quantity and source location; user can convert suggestion into transfer/replenishment request.
+
+*Business Value:*
+Improves sell-through, prevents lost sales, and turns inventory from reactive tracking into predictive intelligence.
+
+*MoSCoW:*
+Should Have",High,13
