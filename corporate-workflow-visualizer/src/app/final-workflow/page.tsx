@@ -3,161 +3,151 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-// Detailed data for each of the 5 modules extracted from workflow.md
-interface FlowStep {
+interface FlowNode {
   id: string;
-  title: string;
-  desc: string;
-  type: 'action' | 'decision' | 'twin' | 'integration';
-  icon?: string;
-  target?: string;
+  label: string;
+  type: 'process' | 'decision' | 'twin' | 'external';
+  subText?: string;
+  connections?: string[];
 }
 
-interface ModuleFlow {
+interface ColumnFlow {
   id: string;
   title: string;
-  shortDesc: string;
-  color: string;
-  textColor: string;
-  accentBg: string;
+  headerColor: string;
   borderColor: string;
-  icon: string;
-  steps: FlowStep[];
+  accentBg: string;
+  textColor: string;
+  steps: FlowNode[];
 }
 
-const MODULES_FLOWS: ModuleFlow[] = [
+const FLOW_DATA: ColumnFlow[] = [
   {
     id: "corp",
-    title: "Corporate Admin & Retail Ops",
-    shortDesc: "Manage product catalogs, pricing rules, promotions, assortment rules, and retail policies.",
-    color: "from-amber-600 to-amber-800",
-    textColor: "text-amber-600",
-    accentBg: "bg-amber-500/5",
-    borderColor: "border-amber-500/20",
-    icon: "🏢",
+    title: "1. CORPORATE ADMIN FLOW",
+    headerColor: "bg-[#0B4F9F] text-white",
+    borderColor: "border-[#0B4F9F]/30",
+    accentBg: "bg-[#0B4F9F]/5",
+    textColor: "text-[#0B4F9F]",
     steps: [
-      { id: "corp_1", title: "Enterprise Control Tower", desc: "Access the corporate retail operations dashboard.", type: "action" },
-      { id: "corp_2", title: "Create / Update Product Master", desc: "Define SKU, brand, category, collection, attributes, and image assets.", type: "action" },
-      { id: "corp_3", title: "Define Serialization Rules", desc: "Set serial requirement rules, barcode, RFID, and Certificate of Authenticity (COA) rules.", type: "action" },
-      { id: "corp_4", title: "Define Warranty & Authentication Rules", desc: "Set up warranty lifespans, extension parameters, and diagnostic rules.", type: "action" },
-      { id: "corp_5", title: "Define Assortment Rules", desc: "Determine catalog availability across specific physical boutiques and online warehouses.", type: "twin", target: "Product Catalog Available to Sales & Product Master Available to Inventory" },
-      { id: "corp_6", title: "Configure Pricing Rules", desc: "Set base price, regional prices, taxes, and promotional campaigns.", type: "action" },
-      { id: "corp_7", title: "Set Discount Limits & Approval Thresholds", desc: "Define maximum associate discount and manager approval triggers.", type: "decision", target: "Discount Approval Rules Available to Boutique Manager & Sales POS" },
-      { id: "corp_8", title: "Publish Compliance Policies", desc: "Upload official planograms, store lookbooks, and VM compliance criteria.", type: "action", target: "Planogram Rules Available to Boutique Manager" },
-      { id: "corp_9", title: "Define Repair SLA Policies", desc: "Configure maximum lead times for diagnostics, repair, and customer updates.", type: "decision", target: "Repair SLA Rules Available to After-Sales" },
-      { id: "corp_10", title: "Monitor Enterprise Analytics", desc: "Review real-time revenue, inventory, compliance reports, and adjust rules via Corporate AI Copilot.", type: "twin" }
+      { id: "ca_1", label: "Manage Product Master", type: "process", subText: "SKUs, Brands, Collections, Serialization rules" },
+      { id: "ca_2", label: "Set Pricing, Promotions & Assortment Rules", type: "process", subText: "Base & regional prices, campaign discounts" },
+      { id: "ca_3", label: "Define Warranty, Authentication, SLA & Compliance Policies", type: "process", subText: "Planograms, SLA triggers, COA requirements" },
+      { id: "ca_4", label: "Master Data & Governance Layer", type: "twin", subText: "Distributes configurations to all subsystems" }
     ]
   },
   {
     id: "inv",
-    title: "Inventory Controller",
-    shortDesc: "Handle receiving, multi-scanning, discrepancy logging, cycle counting, and inter-store transfers.",
-    color: "from-blue-600 to-blue-800",
-    textColor: "text-blue-600",
-    accentBg: "bg-blue-500/5",
-    borderColor: "border-blue-500/20",
-    icon: "📦",
+    title: "2. INVENTORY FLOW",
+    headerColor: "bg-[#DD6B20] text-white",
+    borderColor: "border-[#DD6B20]/30",
+    accentBg: "bg-[#DD6B20]/5",
+    textColor: "text-[#DD6B20]",
     steps: [
-      { id: "inv_1", title: "Open Inventory Intelligence Dashboard", desc: "Receive real-time stock status, pending shipments, and transfer lists.", type: "action" },
-      { id: "inv_2", title: "Receive Shipment", desc: "Process incoming cargo: Vendor ASN, Warehouse transfer, or Inter-Store transfer.", type: "decision" },
-      { id: "inv_3", title: "Scan Items", desc: "Scan shipment items using Barcode, RFID-NFC, or camera-based Vision Multi-Scan.", type: "action" },
-      { id: "inv_4", title: "Match with ASN & Verify Discrepancies", desc: "Cross-reference physical scans with ASN. Log exceptions (Missing, Damaged, Extra) and push to Boutique Manager for signoff.", type: "decision", target: "Variance / Exception Sent to Boutique Manager" },
-      { id: "inv_5", title: "Validate Serial Numbers", desc: "For serial-required products, capture and validate serials. Create/update Product Digital Twin.", type: "twin" },
-      { id: "inv_6", title: "Generate Certificate of Authenticity (COA)", desc: "Trigger COA creation and link it to the Product Digital Twin.", type: "twin" },
-      { id: "inv_7", title: "Assign Product Location", desc: "Designate storage location: Display, Stockroom, Vault, or Reserved for VIP.", type: "action" },
-      { id: "inv_8", title: "Update Store Stock", desc: "Sync physical quantity change to Store Digital Twin and make inventory available for Sales.", type: "twin" },
-      { id: "inv_9", title: "Cycle Count & Stock Audit", desc: "Perform periodic checks using RFID zone scanning. Generate variances for manager approval.", type: "decision" },
-      { id: "inv_10", title: "Manage Transfers & Service Logistics", desc: "Process inter-store transfers, pack outgoing items, and reserve loaner items or repair parts.", type: "integration", target: "Parts / Loaner Data Available to After-Sales" }
+      { id: "ic_1", label: "Receive Shipment / Open ASN", type: "process", subText: "Verify inbound vendor or warehouse shipments" },
+      { id: "ic_2", label: "Scan Items using Barcode, Vision or RFID", type: "process", subText: "Bulk scan validation" },
+      { id: "ic_3", label: "Shipment Matched with ASN?", type: "decision" },
+      { id: "ic_4", label: "Capture Serial Number & Product Details", type: "process", subText: "For verified items" },
+      { id: "ic_5", label: "Create Discrepancy Case", type: "external", subText: "Triggers Boutique Manager sign-off" },
+      { id: "ic_6", label: "Create / Update Product Digital Twin", type: "twin" },
+      { id: "ic_7", label: "Assign Location: Store Floor, Stock Room, Vault or Transfer", type: "process" },
+      { id: "ic_8", label: "Update Store Digital Twin Inventory State", type: "twin", subText: "Sync physical quantity change" }
     ]
   },
   {
     id: "bm",
-    title: "Boutique Manager",
-    shortDesc: "Monitor store health score, manage schedules, approve transactions, and visual merchandising.",
-    color: "from-emerald-600 to-emerald-800",
-    textColor: "text-emerald-600",
-    accentBg: "bg-emerald-500/5",
-    borderColor: "border-emerald-500/20",
-    icon: "👔",
+    title: "3. BOUTIQUE MANAGER FLOW",
+    headerColor: "bg-[#2F855A] text-white",
+    borderColor: "border-[#2F855A]/30",
+    accentBg: "bg-[#2F855A]/5",
+    textColor: "text-[#2F855A]",
     steps: [
-      { id: "bm_1", title: "Boutique Command Dashboard", desc: "Access the unified store-level oversight panel.", type: "action" },
-      { id: "bm_2", title: "Monitor Boutique Health Score", desc: "Track KPIs: Sales vs Target, Staff Shifts, Stock alerts, Repair SLAs, VM compliance, and VIP RSVPs.", type: "twin" },
-      { id: "bm_3", title: "Staff & Shift Planning", desc: "Create/publish advisor schedules, validate role coverage, avoid conflicts, and assign targets.", type: "action" },
-      { id: "bm_4", title: "Visual Merchandising Compliance", desc: "Capture store display photos. AI compares them with planograms to yield a compliance score and corrective tasks.", type: "integration" },
-      { id: "bm_5", title: "VIP Event Management", desc: "Organize trunk shows, select collection focus, send AI-segmented invitations, and track RSVPs and ROI.", type: "action" },
-      { id: "bm_6", title: "Unified Approval Center", desc: "Approve/Reject requests: Discount overrides, inventory variances, transfers, high-value returns, or repair SLA extensions.", type: "decision", target: "Decisions returned to Sales, Inventory, and After-Sales" },
-      { id: "bm_7", title: "Ask AI Boutique Copilot", desc: "Interact with the local AI Copilot for action items regarding revenue gaps, understaffing, or stockouts.", type: "twin" }
+      { id: "bm_1", label: "Open Boutique Command Dashboard", type: "process", subText: "Store operations console" },
+      { id: "bm_2", label: "Monitor Sales, Appointments, Staff, Stock Alerts & Repairs", type: "process", subText: "Real-time health indicators" },
+      { id: "bm_3", label: "Manage Shifts, Goals and Commissions", type: "process", subText: "Workforce scheduler" },
+      { id: "bm_4", label: "Manager Approval / Variance Review", type: "decision", subText: "Review discounts, variances, transfers" },
+      { id: "bm_5", label: "Manage VIP Events and RSVP", type: "process", subText: "Exclusives outreach" },
+      { id: "bm_6", label: "Upload Visual Merchandising Compliance Photos", type: "process", subText: "Compare display photos to planograms" },
+      { id: "bm_7", label: "Update Store Digital Twin State", type: "twin", subText: "Consolidates all manager inputs" }
     ]
   },
   {
     id: "sa",
-    title: "Sales Associate & Client Advisor",
-    shortDesc: "Clienteling digital twin, appointments, assisted selling catalog, luxury POS, and omnichannel checkout.",
-    color: "from-orange-600 to-orange-800",
-    textColor: "text-orange-600",
-    accentBg: "bg-orange-500/5",
-    borderColor: "border-orange-500/20",
-    icon: "🛍️",
+    title: "4. SALES ASSOCIATE FLOW",
+    headerColor: "bg-[#6B46C1] text-white",
+    borderColor: "border-[#6B46C1]/30",
+    accentBg: "bg-[#6B46C1]/5",
+    textColor: "text-[#6B46C1]",
     steps: [
-      { id: "sa_1", title: "Open Advisor Dashboard", desc: "Review daily appointments, goals, open opportunities, and task reminders.", type: "action" },
-      { id: "sa_2", title: "Identify Client Profile", desc: "Search existing client record or register a new client profile with privacy consent.", type: "twin" },
-      { id: "sa_3", title: "Review Client Digital Twin", desc: "View chronological client timeline, preferences, wishlist, sizing, and service history.", type: "twin" },
-      { id: "sa_4", title: "Assisted Selling catalog", desc: "Browse guided catalog, view Product Digital Twin details, and apply AI recommendation looks.", type: "action" },
-      { id: "sa_5", title: "Check Stock & Allocate Products", desc: "Add current store items to cart, or create Endless Aisle orders from warehouses, or queue out-of-stock to wishlist.", type: "decision" },
-      { id: "sa_6", title: "Build Cart & Manage Discounts", desc: "Consolidate items into a curated cart or bundle. Request manager approval if discount exceeds limit.", type: "decision", target: "Discount request sent to Boutique Manager" },
-      { id: "sa_7", title: "Process Payments & Concierge Checkout", desc: "Process payments (split tenders, mobile checkout), generate tax-free docs, register warranty, and print receipts.", type: "integration" },
-      { id: "sa_8", title: "Sync Twin Ecosystem", desc: "Update Client Digital Twin (purchased event), Product Digital Twin (owner, warranty), and Store sales stats.", type: "twin" },
-      { id: "sa_9", title: "Trigger Omnichannel Fulfillment", desc: "Dispatch carry-out, arrange BOPIS pickup, or send endless-aisle/ship-from-store instructions.", type: "integration" },
-      { id: "sa_10", title: "Create Post-Sale Tasks", desc: "AI registers automated milestone/wishlist outreach tasks on the advisor's dashboard.", type: "action" }
+      { id: "sa_1", label: "Open Advisor Dashboard", type: "process" },
+      { id: "sa_2", label: "Client Interaction Type", type: "decision" },
+      { id: "sa_3", label: "Walk-in: Search or Create Client Profile", type: "process" },
+      { id: "sa_4", label: "Appointment: Open Preparation Brief", type: "process" },
+      { id: "sa_5", label: "Remote: Create Curated Cart", type: "process" },
+      { id: "sa_6", label: "BOPIS: Verify Order & Complete Pickup", type: "process" },
+      { id: "sa_7", label: "Return/Exchange: Validate Policy", type: "process" },
+      { id: "sa_8", label: "Open / Update Client Digital Twin", type: "twin" },
+      { id: "sa_9", label: "Review Preferences, Wishlist, Owned Products & History", type: "process" },
+      { id: "sa_10", label: "Browse Catalog & AI Recommendations", type: "process" },
+      { id: "sa_11", label: "Check Inventory Availability (Product Digital Twin)", type: "twin" },
+      { id: "sa_12", label: "Product Available?", type: "decision" },
+      { id: "sa_13", label: "Add to Cart", type: "process", subText: "In-store allocation" },
+      { id: "sa_14", label: "Create Endless Aisle Order / Reservation", type: "process", subText: "Warehouse / other store allocation" },
+      { id: "sa_15", label: "Add to Wishlist & Create Follow-up", type: "process", subText: "Backorder restock setup" },
+      { id: "sa_16", label: "Cart Review & Discount Check", type: "process" },
+      { id: "sa_17", label: "Manager Approval Needed?", type: "decision" },
+      { id: "sa_18", label: "Proceed to Checkout", type: "process" },
+      { id: "sa_19", label: "Payment: Single or Split Tender", type: "process" },
+      { id: "sa_20", label: "Gift Receipt, Tax-Free & Warranty Registration", type: "process" },
+      { id: "sa_21", label: "Sync Digital Twin Ecosystem", type: "twin", subText: "Update Client, Product, & Store Twins" }
     ]
   },
   {
     id: "as",
-    title: "After-Sales Specialist",
-    shortDesc: "Product intake, condition reports, warranty checks, diagnostics, QA checks, and customer updates.",
-    color: "from-purple-600 to-purple-800",
-    textColor: "text-purple-600",
-    accentBg: "bg-purple-500/5",
-    borderColor: "border-purple-500/20",
-    icon: "🛠️",
+    title: "5. AFTER-SALES FLOW",
+    headerColor: "bg-[#C53030] text-white",
+    borderColor: "border-[#C53030]/30",
+    accentBg: "bg-[#C53030]/5",
+    textColor: "text-[#C53030]",
     steps: [
-      { id: "as_1", title: "Open Service Dashboard", desc: "Review intake queues, SLA alerts, pending client approvals, and completed repair lists.", type: "action" },
-      { id: "as_2", title: "Product Service Intake", desc: "Scan product serial/barcode to fetch Product Digital Twin, confirm warranty status, and load owner profile.", type: "twin" },
-      { id: "as_3", title: "Create Ticket & Diagnostic Intake", desc: "Create ticket, capture high-res intake photos, and run AI Condition Analysis or manual diagnostics.", type: "action" },
-      { id: "as_4", title: "Customer Approval Loop", desc: "Generate repair estimate. System messages estimate to client for approval and collects payment.", type: "decision" },
-      { id: "as_5", title: "Allocate & Request Repair Parts", desc: "Reserve parts locally or request parts from the Inventory Controller. Recalculate SLA breach risk.", type: "integration", target: "Parts requested from Inventory" },
-      { id: "as_6", title: "Execute Repair & QA Checklist", desc: "Start repair work, update repair stage timeline, and run a mandatory QA checklist. Retry if QA fails.", type: "decision" },
-      { id: "as_7", title: "Notify Customer & Return Item", desc: "Notify client, schedule store pickup or Courier shipment. Update client timeline.", type: "integration" },
-      { id: "as_8", title: "Close AST & Sync Digital Twins", desc: "Close ticket. Append full repair history to Product Digital Twin, update Client Twin, and sync store metrics.", type: "twin" },
-      { id: "as_9", title: "Process Authentication & Valuations", desc: "Process separate requests: evaluate authenticity, issue Certificate of Authenticity, or print signed Valuation PDF.", type: "action" }
+      { id: "as_1", label: "Create After-Sales Ticket", type: "process" },
+      { id: "as_2", label: "Scan Product Serial / Barcode", type: "process" },
+      { id: "as_3", label: "Load Product History, Warranty & Ownership", type: "twin" },
+      { id: "as_4", label: "Capture Condition Photos & Diagnostic Notes", type: "process" },
+      { id: "as_5", label: "Validate Warranty & SLA Status", type: "process" },
+      { id: "as_6", label: "Generate Repair Estimate", type: "process" },
+      { id: "as_7", label: "Customer Approval Required?", type: "decision" },
+      { id: "as_8", label: "Send Estimate for Approval & Payment", type: "process" },
+      { id: "as_9", label: "Start Repair Workflow", type: "process" },
+      { id: "as_10", label: "Allocate Parts from Inventory", type: "external", subText: "Sync with inventory module" },
+      { id: "as_11", label: "Repair In Progress", type: "process" },
+      { id: "as_12", label: "Complete QA Checklist & QA Passed?", type: "decision" },
+      { id: "as_13", label: "Schedule Pickup or Courier Shipment", type: "process" },
+      { id: "as_14", label: "Return Item to Client & Sync Twins", type: "twin" }
     ]
   }
 ];
 
 export default function FinalWorkflow() {
-  const [activeModule, setActiveModule] = useState<string | null>(null);
+  const [expandedModule, setExpandedModule] = useState<string | null>(null);
 
   const toggleModule = (id: string) => {
-    if (activeModule === id) {
-      setActiveModule(null);
-    } else {
-      setActiveModule(id);
-    }
+    setExpandedModule(expandedModule === id ? null : id);
   };
 
   return (
     <main className="min-h-screen bg-[#FAF8F5] text-[#1A1A1A] font-sans pb-24 relative overflow-x-hidden">
       {/* Background patterns */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 left-[10%] w-[35vw] h-[35vw] rounded-full bg-[#C9540A]/5 blur-[120px]" />
-        <div className="absolute bottom-[20%] right-[5%] w-[40vw] h-[40vw] rounded-full bg-[#1E3A8A]/5 blur-[150px]" />
+        <div className="absolute top-0 left-[10%] w-[35vw] h-[35vw] rounded-full bg-[#C9540A]/3 blur-[120px]" />
+        <div className="absolute bottom-[20%] right-[5%] w-[40vw] h-[40vw] rounded-full bg-[#1E3A8A]/3 blur-[150px]" />
       </div>
 
       {/* Navigation Header */}
       <header className="w-full border-b border-[#1A1A1A]/5 bg-white/60 backdrop-blur-md sticky top-0 z-50 px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <span className="text-xl font-bold tracking-wider text-[#1A1A1A]">RSMS</span>
-          <span className="px-2 py-0.5 text-xs bg-[#C9540A]/10 text-[#C9540A] rounded-full font-medium">Enterprise Flow</span>
+          <span className="px-2 py-0.5 text-xs bg-[#C9540A]/10 text-[#C9540A] rounded-full font-medium">Enterprise Flow Map</span>
         </div>
         <Link href="/" className="px-4 py-2 border border-[#1A1A1A]/10 hover:border-[#C9540A] hover:text-[#C9540A] rounded-sm text-sm font-medium transition-all">
           ← Home Dashboard
@@ -168,175 +158,141 @@ export default function FinalWorkflow() {
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-playfair font-bold text-[#1A1A1A] tracking-tight mb-4">
-            Complete Application <span className="text-[#C9540A] italic">Workflow</span>
+            RSMS Complete <span className="text-[#C9540A] italic">App Workflow</span>
           </h1>
           <p className="text-base md:text-lg text-[#1A1A1A]/70 font-light">
-            Interactive visualization of the Retail Store Management System (RSMS) role-based workflows and synchronized digital twin architecture.
+            Interactive, top-to-bottom layout mapping the entire governance, inventory, boutique management, retail sales, and after-sales service pipeline.
           </p>
         </div>
 
-        {/* 1. Root Node: RSMS */}
-        <div className="flex flex-col items-center mb-16 relative">
-          <div className="bg-gradient-to-r from-[#1A1A1A] to-[#2D2D2D] text-[#FAF8F5] px-12 py-6 rounded-lg shadow-2xl text-center border border-white/10 hover:scale-105 transition-transform duration-300 max-w-md w-full relative group">
-            {/* Ambient gold glow */}
-            <div className="absolute inset-0 bg-[#C9540A]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl rounded-lg -z-10" />
-            <h2 className="text-2xl md:text-3xl font-playfair tracking-wide font-bold mb-1.5">RSMS</h2>
-            <p className="text-xs uppercase tracking-widest text-[#C9540A] font-semibold mb-3">Retail Store Management System</p>
-            <div className="h-px bg-white/20 my-2" />
-            <p className="text-xs text-white/70 font-light mt-2 leading-relaxed">
-              Unified ecosystem supporting Real-Time Operations, Omni-channel Fulfillment, and Multi-Twin Sync.
-            </p>
+        {/* 1. Header Access Row */}
+        <div className="flex flex-col items-center mb-12">
+          {/* User Login & Role based access */}
+          <div className="flex flex-col md:flex-row items-center gap-6 bg-white border border-[#1A1A1A]/10 shadow-lg rounded-xl p-6 max-w-xl w-full">
+            <div className="flex items-center gap-3 bg-[#1A1A1A] text-white px-5 py-3 rounded-lg text-sm font-semibold shadow">
+              <span>👤</span>
+              <span>User Login</span>
+            </div>
+            
+            <div className="hidden md:block text-[#1A1A1A]/30 text-lg">➜</div>
+
+            <div className="bg-amber-50 text-amber-800 border border-amber-300 px-6 py-3 rounded-lg text-sm font-semibold flex items-center gap-2">
+              <span>🛡️</span>
+              <span>Role-Based Access Control</span>
+            </div>
           </div>
-          
-          {/* Stem leading down */}
-          <div className="w-0.5 h-16 bg-[#1A1A1A]/10 mt-0" />
+          <div className="w-0.5 h-10 bg-[#1A1A1A]/10" />
         </div>
 
-        {/* 2. 5 Horizontal Modules */}
-        <div className="relative">
-          {/* Connecting horizontal line */}
-          <div className="absolute top-0 left-[10%] right-[10%] h-0.5 bg-[#1A1A1A]/10 -mt-0.5 hidden md:block" />
-          
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {MODULES_FLOWS.map((module) => {
-              const isOpen = activeModule === module.id;
-              return (
-                <div key={module.id} className="flex flex-col items-center">
-                  {/* vertical drop stem */}
-                  <div className="w-0.5 h-6 bg-[#1A1A1A]/10 hidden md:block" />
-                  
-                  {/* Module selector card */}
-                  <button 
-                    onClick={() => toggleModule(module.id)}
-                    className={`w-full text-left p-5 rounded-lg border transition-all duration-300 cursor-pointer relative overflow-hidden flex flex-col justify-between min-h-[180px] bg-white ${
-                      isOpen 
-                        ? `ring-2 ring-offset-2 ring-[#C9540A] shadow-xl translate-y-1` 
-                        : "border-[#1A1A1A]/10 hover:border-[#C9540A] hover:shadow-lg"
-                    }`}
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-2xl">{module.icon}</span>
-                        <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full ${
-                          isOpen ? 'bg-[#C9540A]/10 text-[#C9540A]' : 'bg-[#1A1A1A]/5 text-[#1A1A1A]/60'
-                        }`}>
-                          {module.id.toUpperCase()}
-                        </span>
-                      </div>
-                      <h3 className="font-playfair text-base font-bold mb-2 text-[#1A1A1A] group-hover:text-[#C9540A] transition-colors leading-tight">
-                        {module.title}
-                      </h3>
-                      <p className="text-xs text-[#1A1A1A]/60 font-light leading-relaxed line-clamp-3">
-                        {module.shortDesc}
-                      </p>
-                    </div>
-                    
-                    <div className="mt-4 pt-3 border-t border-[#1A1A1A]/5 flex items-center justify-between text-[11px] font-semibold text-[#C9540A]">
-                      <span>{isOpen ? "Close Workflow ↑" : "Explore Workflow ↓"}</span>
-                      <span className="text-xs transition-transform duration-300" style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}>
-                        ▼
-                      </span>
-                    </div>
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* 3. Drop-down flow section */}
-        <div className="mt-12 relative min-h-[100px]">
-          {MODULES_FLOWS.map((module) => {
-            const isOpen = activeModule === module.id;
-            if (!isOpen) return null;
+        {/* 2. 5 Horizontal Module Headers */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+          {FLOW_DATA.map((module) => {
+            const isExpanded = expandedModule === module.id;
             return (
-              <div 
-                key={module.id} 
-                className="bg-white rounded-xl border border-[#1A1A1A]/10 shadow-2xl p-8 md:p-12 animate-fadeIn relative overflow-hidden"
+              <button
+                key={module.id}
+                onClick={() => toggleModule(module.id)}
+                className={`w-full text-left p-5 rounded-lg border transition-all duration-300 shadow bg-white cursor-pointer relative overflow-hidden flex flex-col justify-between min-h-[140px] hover:shadow-lg ${
+                  isExpanded ? 'ring-2 ring-[#C9540A] ring-offset-2 scale-102' : 'border-[#1A1A1A]/10'
+                }`}
               >
-                {/* Visual Header Decoration */}
-                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${module.color}`} />
-                
-                {/* Module Details */}
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12 pb-6 border-b border-[#1A1A1A]/5">
-                  <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="text-3xl">{module.icon}</span>
-                      <h2 className="text-2xl md:text-3xl font-playfair font-bold text-[#1A1A1A]">
-                        {module.title}
-                      </h2>
-                    </div>
-                    <p className="text-sm text-[#1A1A1A]/70 font-light max-w-3xl">
-                      {module.shortDesc}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs text-[#1A1A1A]/50">Sequence:</span>
-                    <span className="text-xs font-bold px-3 py-1 bg-[#1A1A1A]/5 rounded-full text-[#1A1A1A]">
-                      Top-to-Bottom Flow
-                    </span>
-                  </div>
+                <div>
+                  <h3 className={`text-xs font-bold tracking-wider px-2.5 py-1 rounded-sm inline-block mb-3 ${module.headerColor}`}>
+                    {module.title}
+                  </h3>
+                  <p className="text-xs text-[#1A1A1A]/60 font-light leading-relaxed">
+                    Interactive role-based pipeline with digital twin updates.
+                  </p>
+                </div>
+                <div className="mt-4 flex items-center justify-between text-[11px] font-semibold text-[#C9540A]">
+                  <span>{isExpanded ? "Collapse Flow ↑" : "Expand Downwards ↓"}</span>
+                  <span>▼</span>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* 3. Dropdown Flow Column rendering */}
+        <div className="mt-6">
+          {FLOW_DATA.map((module) => {
+            const isExpanded = expandedModule === module.id;
+            if (!isExpanded) return null;
+            return (
+              <div
+                key={module.id}
+                className="bg-white rounded-xl border border-[#1A1A1A]/10 shadow-2xl p-8 md:p-12 animate-fadeIn"
+              >
+                <div className="text-center mb-10 pb-6 border-b border-[#1A1A1A]/5">
+                  <h2 className={`text-xl font-bold uppercase tracking-wider px-4 py-1.5 rounded inline-block ${module.headerColor}`}>
+                    {module.title}
+                  </h2>
+                  <p className="text-xs text-[#1A1A1A]/50 mt-3 font-light">
+                    Follow the top-to-bottom pipeline sequence. Decisions represent approval gate reviews.
+                  </p>
                 </div>
 
-                {/* Top-to-Bottom step list */}
-                <div className="max-w-2xl mx-auto flex flex-col items-center">
+                {/* Steps container */}
+                <div className="max-w-xl mx-auto flex flex-col items-center">
                   {module.steps.map((step, idx) => {
                     const isLast = idx === module.steps.length - 1;
                     return (
                       <React.Fragment key={step.id}>
-                        {/* Step Card */}
-                        <div className="w-full relative group">
-                          {/* Inner border highlighting on hover */}
-                          <div className={`absolute -inset-px rounded-lg bg-gradient-to-r ${module.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm`} />
-                          
-                          <div className="bg-white border border-[#1A1A1A]/10 hover:border-[#1A1A1A]/20 shadow-md hover:shadow-xl rounded-lg p-6 transition-all duration-300 flex items-start gap-4">
-                            {/* Step number bubble */}
-                            <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
-                              step.type === 'decision' 
-                                ? 'bg-amber-100 text-amber-800 border border-amber-300' 
-                                : step.type === 'twin'
-                                ? 'bg-blue-100 text-blue-800 border border-blue-300'
-                                : step.type === 'integration'
-                                ? 'bg-purple-100 text-purple-800 border border-purple-300'
-                                : 'bg-[#1A1A1A]/5 text-[#1A1A1A]'
-                            }`}>
+                        {/* Flow nodes rendering */}
+                        {step.type === 'decision' ? (
+                          /* Decision Diamond style */
+                          <div className="relative my-4 flex justify-center items-center group w-64 h-32">
+                            <div className="absolute inset-0 bg-[#DD6B20]/10 border-2 border-[#DD6B20] rotate-45 rounded-sm shadow-md transition-all duration-300 group-hover:bg-[#DD6B20]/20" />
+                            <div className="relative text-center z-10 px-4">
+                              <h4 className="font-playfair text-sm font-bold text-[#1A1A1A] leading-tight">
+                                {step.label}
+                              </h4>
+                              {step.subText && (
+                                <p className="text-[10px] text-[#1A1A1A]/60 mt-1 font-light leading-none">
+                                  {step.subText}
+                                </p>
+                              )}
+                              <span className="text-[8px] uppercase tracking-widest font-bold text-[#DD6B20] block mt-1">Decision Gate</span>
+                            </div>
+                          </div>
+                        ) : step.type === 'twin' ? (
+                          /* Digital Twin style - Cylinder/Hexagon capsule look */
+                          <div className="w-full bg-[#007A87]/5 border-2 border-[#007A87] rounded-lg p-5 shadow-sm transition-all duration-300 hover:shadow-lg flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-full bg-[#007A87]/10 flex items-center justify-center text-lg">
+                              🧬
+                            </div>
+                            <div className="text-left">
+                              <h4 className="font-playfair text-sm font-bold text-[#1A1A1A] leading-tight">
+                                {step.label}
+                              </h4>
+                              <p className="text-[11px] text-[#1A1A1A]/60 font-light mt-1">
+                                {step.subText || "Sync & write changes back to the Digital Twin Ledger"}
+                              </p>
+                              <span className="text-[8px] uppercase tracking-widest font-bold text-[#007A87] block mt-1">Digital Twin Sync</span>
+                            </div>
+                          </div>
+                        ) : (
+                          /* Process Box style */
+                          <div className="w-full bg-white border border-[#1A1A1A]/10 hover:border-[#1A1A1A]/30 rounded-lg p-5 shadow-sm transition-all duration-300 hover:shadow-lg flex items-start gap-4">
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold ${module.headerColor}`}>
                               {idx + 1}
                             </div>
-                            
-                            <div className="flex-grow">
-                              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                                <h4 className="font-playfair text-base font-bold text-[#1A1A1A] leading-snug">
-                                  {step.title}
-                                </h4>
-                                <span className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                                  step.type === 'decision'
-                                    ? 'bg-amber-100 text-amber-800'
-                                    : step.type === 'twin'
-                                    ? 'bg-blue-100 text-blue-800'
-                                    : step.type === 'integration'
-                                    ? 'bg-purple-100 text-purple-800'
-                                    : 'bg-[#1A1A1A]/5 text-[#1A1A1A]/60'
-                                }`}>
-                                  {step.type}
-                                </span>
-                              </div>
-                              <p className="text-xs text-[#1A1A1A]/70 font-light leading-relaxed">
-                                {step.desc}
-                              </p>
-                              
-                              {step.target && (
-                                <div className="mt-3 pt-2.5 border-t border-dashed border-[#1A1A1A]/5 flex items-center gap-2">
-                                  <span className="text-[10px] text-[#C9540A] font-bold uppercase tracking-widest">Integration Point:</span>
-                                  <span className="text-[11px] text-[#1A1A1A]/80 italic font-medium">{step.target}</span>
-                                </div>
+                            <div className="text-left flex-grow">
+                              <h4 className="font-playfair text-sm font-bold text-[#1A1A1A]">
+                                {step.label}
+                              </h4>
+                              {step.subText && (
+                                <p className="text-xs text-[#1A1A1A]/60 font-light mt-1">
+                                  {step.subText}
+                                </p>
                               )}
                             </div>
                           </div>
-                        </div>
+                        )}
 
-                        {/* Drop arrow to next step */}
+                        {/* Connector arrow */}
                         {!isLast && (
-                          <div className="flex flex-col items-center py-4">
+                          <div className="flex flex-col items-center py-3">
                             <div className="w-0.5 h-6 bg-[#1A1A1A]/10" />
                             <div className="text-[#1A1A1A]/20 -my-1 text-xs">▼</div>
                           </div>
@@ -348,6 +304,86 @@ export default function FinalWorkflow() {
               </div>
             );
           })}
+        </div>
+
+        {/* 4. Shared Digital Twin & AI Layer (Section 6 & 7) */}
+        <div className="mt-16 bg-white border border-[#1A1A1A]/10 rounded-xl shadow-xl p-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-teal-500 to-indigo-600" />
+          
+          <div className="text-center mb-8">
+            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-teal-50 text-teal-800 border border-teal-300 rounded-full">
+              6. Shared Digital Twin & AI Layer
+            </span>
+            <h2 className="text-2xl font-playfair font-bold text-[#1A1A1A] mt-3">
+              Retail Intelligence Core
+            </h2>
+          </div>
+
+          {/* Grid layout of 4 twins */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+              <span className="text-2xl block mb-2">📁</span>
+              <h4 className="font-semibold text-xs text-[#1A1A1A]">Product Digital Twin</h4>
+              <p className="text-[10px] text-[#1A1A1A]/60 mt-1 font-light leading-snug">SKU, Barcode, Serial, Owner, Warranty history</p>
+            </div>
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+              <span className="text-2xl block mb-2">👤</span>
+              <h4 className="font-semibold text-xs text-[#1A1A1A]">Client Digital Twin</h4>
+              <p className="text-[10px] text-[#1A1A1A]/60 mt-1 font-light leading-snug">Preferences, Size history, Wishlist, Consent</p>
+            </div>
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+              <span className="text-2xl block mb-2">🏪</span>
+              <h4 className="font-semibold text-xs text-[#1A1A1A]">Store Digital Twin</h4>
+              <p className="text-[10px] text-[#1A1A1A]/60 mt-1 font-light leading-snug">Sales, Staff Shifts, VM compliance, Local stock</p>
+            </div>
+            <div className="bg-slate-50 border border-slate-200 rounded-lg p-5 text-center">
+              <span className="text-2xl block mb-2">🌐</span>
+              <h4 className="font-semibold text-xs text-[#1A1A1A]">Retail Digital Twin</h4>
+              <p className="text-[10px] text-[#1A1A1A]/60 mt-1 font-light leading-snug">Enterprise-wide analytical consolidation ledger</p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-teal-500/5 to-indigo-500/5 border border-teal-500/20 rounded-lg p-6 flex flex-col md:flex-row items-center gap-6">
+            <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-lg shrink-0">
+              🤖
+            </div>
+            <div>
+              <h4 className="font-playfair font-bold text-sm text-[#1A1A1A] mb-1">AI Copilot & Intelligence Layer</h4>
+              <p className="text-xs text-[#1A1A1A]/70 leading-relaxed font-light">
+                Continuous data engine consuming digital twin updates to issue role-based recommendations, detect stockouts, prevent SLA breaches, and generate VM compliance feedback loops.
+              </p>
+            </div>
+          </div>
+
+          {/* 7. AI Copilot Insights outputs */}
+          <div className="mt-8 pt-8 border-t border-[#1A1A1A]/5">
+            <h3 className="text-center text-[10px] font-bold uppercase tracking-widest text-[#1A1A1A]/60 mb-6">
+              7. AI COPILOT ROLE-BASED OUTPUTS & INSIGHTS
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="border border-[#0B4F9F]/20 bg-[#0B4F9F]/2 p-4 rounded-lg text-center">
+                <span className="text-sm font-bold text-[#0B4F9F] block mb-1">Corporate Insights</span>
+                <p className="text-[10px] text-[#1A1A1A]/70 font-light leading-relaxed">Revenue performance, Compliance audits, Pricing adjust alerts</p>
+              </div>
+              <div className="border border-[#DD6B20]/20 bg-[#DD6B20]/2 p-4 rounded-lg text-center">
+                <span className="text-sm font-bold text-[#DD6B20] block mb-1">Inventory Insights</span>
+                <p className="text-[10px] text-[#1A1A1A]/70 font-light leading-relaxed">Stockout prediction, variance triggers, shrink alerts</p>
+              </div>
+              <div className="border border-[#2F855A]/20 bg-[#2F855A]/2 p-4 rounded-lg text-center">
+                <span className="text-sm font-bold text-[#2F855A] block mb-1">Boutique Insights</span>
+                <p className="text-[10px] text-[#1A1A1A]/70 font-light leading-relaxed">Store Health KPI recommendations, workforce alerts</p>
+              </div>
+              <div className="border border-[#6B46C1]/20 bg-[#6B46C1]/2 p-4 rounded-lg text-center">
+                <span className="text-sm font-bold text-[#6B46C1] block mb-1">Sales Insights</span>
+                <p className="text-[10px] text-[#1A1A1A]/70 font-light leading-relaxed">Next Best Action suggestions, Milestones milestones outreach</p>
+              </div>
+              <div className="border border-[#C53030]/20 bg-[#C53030]/2 p-4 rounded-lg text-center">
+                <span className="text-sm font-bold text-[#C53030] block mb-1">Service Insights</span>
+                <p className="text-[10px] text-[#1A1A1A]/70 font-light leading-relaxed">SLA risk escalations, spare parts availability tracking</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
